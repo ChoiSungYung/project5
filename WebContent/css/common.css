@@ -3,6 +3,7 @@
 /*헤더 영역*/
 .hd{clear: both; width: 100%; border-bottom:3px solid rgb(38, 0, 255); height: 120px;}
 .wrap{ display: flex; min-height:100vh; flex-direction: column; width:100%;}
+.wrap2{ min-height:100vh; width:100%;}
 .gnb{clear: both; width: 1000px; margin: 20px auto; }
 .menu{clear: both;}
 .tnb { float:right; margin-right:20px; }
