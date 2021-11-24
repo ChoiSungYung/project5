@@ -1,0 +1,5 @@
+    /*초기화 영역*/
+    *{margin:0;padding:0}
+    body, html{width:100%; font-family:'Nanum Gothic', sans-serif; color:#000; background-color:#fff}
+    ul{list-style: none;}
+    a{text-decoration: none;}
