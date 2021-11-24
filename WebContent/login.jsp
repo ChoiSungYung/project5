@@ -18,9 +18,9 @@
 </head>
 
 <body>
-<div class="wrap">
-  <%@ include file = "header.jsp" %>
-  	<div class="content">
+    <div class="wrap">
+  	<%@ include file = "header.jsp" %>	<!-- 헤더 -->
+ 	<section class="content">
         <h2 class="con_tit">로그인</h2>
         <form action="loginPro.jsp" class="login_form" method="post">
 			<input type="text"  id="m_id"  name="m_id" placeholder="아이디 입력" class="indata" required />
@@ -31,8 +31,8 @@
 				<input type="reset"  value="취소" class="inbtn"/>
 			</div>		
 		</form>
-  	</div>
-</div>
+</section>
   <%@ include file = "footer.jsp" %>
+</div>
 </body>
 </html>

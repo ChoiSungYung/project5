@@ -69,8 +69,9 @@
 	}
 	</script>
 
-<%@include file="footer.jsp" %>
-</section>
-</div>
+	</section>
+	<%@include file="footer.jsp" %>
+	</div>
+	</body>
 </body>
 </html>
