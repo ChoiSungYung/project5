@@ -5,7 +5,7 @@
 <%@ page import="com.company.model.NoticeVO"  %>
 <%
 	//GetNoticeListCtrl에서 보내온 데이터를 받기
-ArrayList<NoticeVO> noticeList = (ArrayList<NoticeVO>) request.getAttribute("noticeList");
+	ArrayList<NoticeVO> notiList = (ArrayList<NoticeVO>) request.getAttribute("noticeList");
 %>    
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,7 @@ ArrayList<NoticeVO> noticeList = (ArrayList<NoticeVO>) request.getAttribute("not
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>환상의 싸이트 </title>
+    <title> 북스크린 | 영화 예매, 정보 검색, 다운로드까지 한 곳에서 </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@ ArrayList<NoticeVO> noticeList = (ArrayList<NoticeVO>) request.getAttribute("not
 	table { display:table; border-collapse:collapse; }
 	tr { display:table-row; }
 	th, td { display:table-cell; }
-	.tb { width:1000px; margin:20px auto; }
+	.tb { width:1200px; margin:20px auto; }
 	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
 	.tb th { border-top:2px solid #333; background:#ffd35e; }
 	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
@@ -41,72 +41,64 @@ ArrayList<NoticeVO> noticeList = (ArrayList<NoticeVO>) request.getAttribute("not
 </head>
 <body>
 <div class="wrap">
-  <!-- 헤더 -->
-  <%@ include file = "admin_header.jsp" %>
-	<h2 class="fr_tit">공지사항</h2>
-	<form action="deleteNoticeCtrl" method="post" name="delForm" onsubmit="return frm_submit(this)">
+<%@ include file="admin_header.jsp" %>
+	<h2 class="tit">공지사항</h2>
+	<form action="DeleteNoticeCtrl" name="frm" id="frm" method="post" onsubmit="return frm_submit(this)">	
 	<table class="tb">
 		<thead>
 			<tr>
 				<th class="item1">번호</th>
-				<th class="item2">게시판번호</th>
 				<th class="item2">제목</th>
-				<th class="item2">내용</th>
 				<th class="item3">작성자</th>
 				<th class="item4">작성일시</th>
 				<th class="item5">편집</th>
 			</tr>
 		</thead>
 		<tbody>
-		
 <%
 	int cnt=0;
-	for(int i=0;i<noticeList.size();i++) {		//한 튜플씩 불러다 출력하기
+	for(int i=0;i<notiList.size();i++) {		//한 튜플씩 불러다 출력하기
 		cnt=i+1;
-		NoticeVO noti = noticeList.get(i);
+		NoticeVO noti = notiList.get(i);
 %>		
 			<tr>
-				<td class="item1"><%=cnt %></td>				
-				<td class="item2"><a href="EditNoticeFormCtrl?id=<%=noti.getN_id()%>"><%=noti.getN_id() %></a></td>
-				<td class="item3"><%=noti.getTitle() %></a></td>
-				<td class="item4"><%=noti.getContent() %></td>
-				<td class="item5"><%=noti.getAuthor() %></td>
-				<td class="item6"><%=noti.getResdate() %></td>
-				<td class="item7">
-					<input type="checkbox"  name="ck"  id="ck<%=i %>"  class="ck_item" value="<%=noti.getN_id()%>"/>
+				<td class="item1"><%=cnt %></td>
+				<td class="item2"><a href="EditNoticeFormCtrl?id=<%=noti.getN_id() %>"><%=noti.getTitle() %></a></td>
+				<td class="item3"><%=noti.getAuthor() %></td>
+				<td class="item4"><%=noti.getResdate() %></td>
+				<td class="item5">
+					<input type="checkbox"  name="ck"  id="ck<%=i %>"  class="ck_item" value="<%=noti.getN_id() %>"/>
 				</td>
 			</tr>
 <%
 	}
 %>			
 		</tbody>
-		</table>
-		    <hr />
+	</table>
 		<div class="btn_wrap">	
 			<button type="submit" class="in_btn" onclick="">삭제</button>
 			<button type="reset" class="in_btn" onclick="">취소</button>
 		</div>	
 	</form>
-	<script>
-	function frm_submit(f){
-		var sel='input[name="ck"]:checked';
-		var item=document.querySelectorAll(sel);
-		var cnt=item.length;
-		if(cnt==0){
-			alert("삭제할 요소를 선택하지 않았습니다.")
+<%@ include file="footer.jsp" %>
+</div>
+<script>
+function frm_submit(f){		//f:form 태그에서 보내온 데이터
+	var sel = 'input[name="ck"]:checked';		//sel = document.getElementsByClass("ck_item");
+	var item = document.querySelectorAll(sel);
+	var cnt = item.length;
+	if(cnt==0){	//선택체크한 체크박스가 없으면
+		alert("삭제할 요소를 선택하지 않았습니다.");	//메시지만 띄우고 끝남
+		return false;
+	} else {		//선택체크된 체크박스가 있으면 
+		var qt = confirm("정말로 삭제하시겠습니까?");		//지우기 전에 정말로 삭제할 것인지 물어서 [확인] 선택시  true 반환
+		if(qt) {		//qt가 true(확인 대화상자에서 [확인]을 누른 경우)이면 폼 데이터 전송
+			f.submit();	
+		} else {		//qt가 false(확인 대화상자에서 [취소]를 누른 경우)이면 아무 일도 일어나지 않음
 			return false;
-		} else {
-			var qt=confirm("정말로 삭제하시겠습니까?")
-			if(qt){
-				f.submit();
-			} else{
-				return false;
-			}
 		}
 	}
-	</script>
-	</div>
-	  <!-- 푸터 -->
-  <%@ include file = "footer.jsp" %>
+}
+</script>
 </body>
 </html>

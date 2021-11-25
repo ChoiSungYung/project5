@@ -1,4 +1,4 @@
-package com.company.biz;
+package com.company.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -74,9 +74,9 @@ public class EditMemberCtrl extends HttpServlet {
 					memberList.add(mem);
 					
 				}
-				request.setAttribute("memberList", memberList);		//蹂대궡吏� List �뜲�씠�꽣瑜� 吏��젙
-				RequestDispatcher view = request.getRequestDispatcher("getMemberModify.jsp");  //蹂대궡吏� 怨� 吏��젙 
-				view.forward(request, response);	//吏��젙�븳 URL濡� �뜲�씠�꽣瑜� �넚�떊
+				request.setAttribute("memberList", memberList);	
+				RequestDispatcher view = request.getRequestDispatcher("getMemberModify.jsp"); 
+				view.forward(request, response);	
 				rs.close();
 				stmt.close();
 				con.close();

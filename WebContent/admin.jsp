@@ -33,7 +33,6 @@
 	<!-- 푸터 -->
 	</section>
 	<%@include file="footer.jsp" %>
-
 	</div>
 	</body>
 </html>

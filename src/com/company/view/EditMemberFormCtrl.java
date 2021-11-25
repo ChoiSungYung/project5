@@ -1,4 +1,4 @@
-package com.company.biz;
+package com.company.view;
 
 import java.io.IOException;
 import java.sql.Connection;
