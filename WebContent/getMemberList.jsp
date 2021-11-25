@@ -41,73 +41,73 @@
 </head>
 <body>
 <div class="wrap">
-  <!-- 헤더 -->
-  <%@ include file = "admin_header.jsp" %>
-<h2 class="fr_tit">회원 관리</h2>
-	<form action="deleteMemberCtrl" method="post" name="delForm" onsubmit="return frm_submit(this)">
+<%@ include file="admin_header.jsp" %>
+<h2 class="tit">회원 목록</h2>
+<form action="DeleteMemberCtrl" method="post" name="delForm"  onsubmit="return frm_submit(this)">
+
 	<table class="tb">
 		<thead>
 			<tr>
-				<th class="item1">번호 </th>
-				<th class="item2">회원아이디 </th>
-				<th class="item3">비밀번호</th>
-				<th class="item4">이름</th>
-				<th class="item5">이메일</th>
-				<th class="item6">전화번호</th>
-				<th class="item7">가입일</th>
-				<th class="item8">편집</th>
+				<th class="item1">회원아이디 </th>
+				<th class="item2">회원비밀번호</th>
+				<th class="item3">이름</th>
+				<th class="item4">이메일</th>
+				<th class="item5">전화번호</th>
+				<th class="item6">주소</th>
+				<th class="item7">직업</th>
+				<th class="item8">가입일</th>
+				<th class="item9">편집</th>
 			</tr>
 		</thead>
 		<tbody>
 <%	
 	int cnt=0;
-	for(int i=0;i<memberList.size();i++) {		//한 튜플씩 불러다 출력하기
+	for(int i=0;i<memberList.size();i++){
 		cnt=i+1;
 		MemberVO mem = memberList.get(i);
-%>		
+%>	
 			<tr>
-				<td class="item1"><a href="editMemberForm?uid=<%=mem.getM_id() %>"><%=cnt %></a></td>
-				<td class="item2"><a href="EditMemberCtrl?id=<%=mem.getM_id() %>"><%=mem.getM_id() %></a></td>
-				<td class="item3"><%=mem.getM_pw() %></td>
-				<td class="item4"><%=mem.getM_name() %></td>
-				<td class="item5"><%=mem.getM_email() %></td>
-				<td class="item6"><%=mem.getM_tel() %></td>
-				<td class="item7"><%=mem.getRegdate() %></td>
-				<td class="item7"><%=mem.getRegdate() %></td>
-				
+				<td class="item1"><a href="EditMemberFormCtrl?id=<%=mem.getM_id() %>"><%=mem.getM_id() %></a></td>
+				<td class="item2"><%=mem.getM_pw() %></td>
+				<td class="item3"><%=mem.getM_name() %></td>
+				<td class="item4"><%=mem.getM_email() %></td>
+				<td class="item5"><%=mem.getM_tel() %></td>
+				<td class="item6"><%=mem.getM_addr1() %>&nbsp;<%=mem.getM_addr2() %></td>
+				<td class="item7"><%=mem.getM_job() %></td>
+				<td class="item8"><%=mem.getRegdate() %></td>
+				<td class="item9">
+					<input type="checkbox"  name="ck"  id="ck<%=i %>"  class="ck_item" value="<%=mem.getM_id() %>"/>
+				</td>
 			</tr>
 <%
 	}
 %>
-	</tbody>
+		</tbody>
 	</table>
-    <hr />
 	<div class="btn_wrap">	
-		<button type="submit" class="in_btn" onclick="">수정</button>
+		<button type="submit" class="in_btn" onclick="">삭제</button>
 		<button type="reset" class="in_btn" onclick="">취소</button>
 	</div>	
 </form>
 <script>
-function frm_submit(f){
-	var sel='input[name="ck"]:checked';
-	var item=document.querySelectorAll(sel);
-	var cnt=item.length;
-	if(cnt==0){
-		alert("삭제할 요소를 선택하지 않았습니다.")
+function frm_submit(f){		//f:form 태그에서 보내온 데이터
+	var sel = 'input[name="ck"]:checked';		//sel = document.getElementsByClass("ck_item");
+	var item = document.querySelectorAll(sel);
+	var cnt = item.length;
+	if(cnt==0){	//선택체크한 체크박스가 없으면
+		alert("삭제할 요소를 선택하지 않았습니다.");	//메시지만 띄우고 끝남
 		return false;
-	} else {
-		var qt=confirm("정말로 삭제하시겠습니까?")
-		if(qt){
-			f.submit();
-		} else{
+	} else {		//선택체크된 체크박스가 있으면 
+		var qt = confirm("정말로 삭제하시겠습니까?");		//지우기 전에 정말로 삭제할 것인지 물어서 [확인] 선택시  true 반환
+		if(qt) {		//qt가 true(확인 대화상자에서 [확인]을 누른 경우)이면 폼 데이터 전송
+			f.submit();	
+		} else {		//qt가 false(확인 대화상자에서 [취소]를 누른 경우)이면 아무 일도 일어나지 않음
 			return false;
 		}
 	}
 }
 </script>
+<%@ include file="footer.jsp" %>
 </div>
-  <!-- 푸터 -->
-  <%@ include file = "footer.jsp" %>
 </body>
 </html>
-	

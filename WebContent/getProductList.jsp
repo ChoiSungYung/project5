@@ -29,6 +29,7 @@
 	tr { display:table-row; }
 	th, td { display:table-cell; }
 	.tb { width:1200px; margin:20px auto; }
+	.tb img{ width:100px; height:auto; }
 	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
 	.tb th { border-top:2px solid #333; background:#ffd35e; }
 	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
@@ -71,7 +72,7 @@
 				<td class="item3"><%=pro.getProprice() %></td>
 				<td class="item4"><%=pro.getProcnt() %></td>
 				<td class="item5">
-					<img src="<%=proimg %>" alt="<%=pro.getProname() %>" />	
+					<img src="<%=pro.getProimg() %>" alt="<%=pro.getProname() %>" />	
 				</td>
 				<td class="item6">
 					<input type="checkbox"  name="ck"  id="ck<%=i %>"  class="ck_item" value="<%=pro.getPronum() %>"/>

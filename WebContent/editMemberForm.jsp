@@ -74,6 +74,30 @@ input[readonly] { background:#f1f1f1; }
 					<input type="text" id="utel" name="utel" class="in_data" value="<%=mem.getM_tel() %>"/>
 				</td>
 			</tr>
+			<tr>
+				<th class="col_hd">
+					<label for="uregdate">주소</label>
+				</th>
+				<td class="col_data">
+					<input type="text" id="uaddr1" name="uaddr1" class="in_data" value="<%=mem.getM_addr1() %>"/>
+				</td>
+			</tr>
+			<tr>
+				<th class="col_hd">
+					<label for="uregdate">상세주소</label>
+				</th>
+				<td class="col_data">
+					<input type="text" id="uaddr2" name="uaddr2" class="in_data" value="<%=mem.getM_addr2() %>"/>
+				</td>
+			</tr>
+			<tr>
+				<th class="col_hd">
+					<label for="uregdate">직업</label>
+				</th>
+				<td class="col_data">
+					<input type="text" id="ujob" name="ujob" class="in_data" value="<%=mem.getM_job() %>"/>
+				</td>
+			</tr>
 		</tbody>
 	</table>
     <hr />

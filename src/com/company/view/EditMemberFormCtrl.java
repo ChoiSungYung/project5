@@ -46,6 +46,9 @@ public class EditMemberFormCtrl extends HttpServlet {
 				mem.setM_name(rs.getString("m_name"));
 				mem.setM_email(rs.getString("m_email"));
 				mem.setM_tel(rs.getString("m_tel"));
+				mem.setM_addr1(rs.getString("m_addr1"));
+				mem.setM_addr2(rs.getString("m_addr2"));
+				mem.setM_job(rs.getString("m_job"));
 			} else {
 				response.sendRedirect("GetMemberListCtrl");
 			}

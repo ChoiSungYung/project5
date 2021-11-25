@@ -15,32 +15,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>관리자 글 수정</title>
-<style>
-* { margin:0; padding:0; }
-body, html { width:100%; }
-ul { list-style:none; }
-.hd { clear:both; height:100px; border-bottom:3px solid #f1f1f1; }
-.gnb { width:1140px; margin:10px auto; }
-.gnb li { float:left; margin:14px; }
-.tit { padding-top:50px; line-height:50px; text-align:center; }
-table { display:table; border-collapse:collapse; }
-tr { display:table-row; }
-th, td { display:table-cell; }
-.tb { width:600px; margin:20px auto; }
-.tb th, .tb td { line-height:42px; border-bottom:1px solid #333; }
-.tb th { background:#ffd35e; }
-.tb tr:first-child th, .tb tr:first-child td { border-top:1px solid #333; } 
-.in_data { display:block; line-height:32px; height:32px; margin-left:10px; padding-left:5px; width:240px; }
-.in_data_area { line-height:1.6; padding:5px; width:400px; margin-left:10px; }
-.btn_wrap { width:220px; margin:20px auto; }
-.btn_wrap .in_btn { display:block; width:80px; margin:15px; background-color:#333; color:#fff; 
-text-align:center; border:0; outline:0; float:left; line-height:38px; }
-.btn_wrap .in_btn:hover { background-color:deeppink; }
-.in_comment { padding-left:18px; }
-input[readonly] { background:#f1f1f1; }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title> 북스크린 | 영화 예매, 정보 검색, 다운로드까지 한 곳에서 </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/ban.css">
+    <link rel="stylesheet" href="./css/form.css">
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<style>
+	.tit { padding: 30px 30px; text-align:center; }
+	table { display:table; border-collapse:collapse; }
+	tr { display:table-row; }
+	th, td { display:table-cell; }
+	.tb { width:1200px; margin:20px auto; }
+	.tb img{ width:100px; height:auto; }
+	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
+	.tb th { border-top:2px solid #333; background:#ffd35e; }
+	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
+	.btn_wrap { width:220px; margin:20px auto; }
+	.btn_wrap .in_btn { display:block; width:80px; margin:15px; background-color:#333; color:#fff; 
+	text-align:center; border:0; outline:0; float:left; line-height:38px; }
+	.btn_wrap .in_btn:hover { background-color:deeppink; }
+	</style>
 </head>
 <body>
 <div class="wrap">
@@ -86,9 +89,9 @@ input[readonly] { background:#f1f1f1; }
 					<label for="author">제품 이미지</label>
 				</th>
 				<td class="col_data">
-					<img src="<%=proimg %>" alt="<%=pro.getProname() %>"  id="proData"/>
+					<img src="<%=proimg %>" alt="<%=proimg %>"  id="proData"/>
 					<input type="button" onclick="imgCheck()" value="이미지 변경"/>
-					<input type="hidden" name="proimg" id="proimg" value="<%=proimg %>" />
+					<input type="hidden" name="proimg" id="proimg" value="<%=pro.getProimg() %>" />
 					<input type="hidden" name="imgck" id="imgck" value="" />
 				</td>
 			</tr>
@@ -113,7 +116,7 @@ input[readonly] { background:#f1f1f1; }
 		}
 	}
 	</script>	
-<%@ include file="admin_footer.jsp" %>
+<%@ include file="footer.jsp" %>
 </div>	
 </body>
 </html>
