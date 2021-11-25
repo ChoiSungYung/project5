@@ -77,7 +77,7 @@
 		</tbody>
 	</table>
 	<div class="btn_wrap">	
-		<button type="button" class="in_btn" onclick="location.href='addMemberForm.jsp'">추가</button>
+		<button type="button" class="in_btn" onclick="location.href='addAdminForm.jsp'">추가</button>
 		<button type="submit" class="in_btn" onclick="">삭제</button>
 		<button type="reset" class="in_btn" onclick="">취소</button>
 	</div>	

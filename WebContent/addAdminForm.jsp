@@ -17,14 +17,13 @@
     <link rel="stylesheet" href="./css/ban.css">
     <link rel="stylesheet" href="./css/form.css">
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
-	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<style>
 	.tit { padding: 30px 30px; text-align:center; }
 	table { display:table; border-collapse:collapse; }
 	tr { display:table-row; }
 	th, td { display:table-cell; }
-	.tb {width: 600px;margin:10px auto;}
-	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
+	.tb { width:auto; margin:20px auto; }
+	.tb th, .tb td { width:auto; line-height:36px; border-bottom:1px solid #333; }
 	.tb th { border-top:2px solid #333; background:#ffd35e; }
 	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
 	.btn_wrap { width:400px; margin:20px auto; }
@@ -34,12 +33,13 @@
 	</style>
 </head>
 <body>
-	<!-- 헤더 -->
-	<%@ include file="admin_header.jsp" %>
-	<h1>관리자 등록</h1>
-	<!-- 상품 등록 폼 -->
+<div class="wrap">
+<%@ include file="admin_header.jsp" %>
+ <section class="content">
+	<h2 class="tit">관리자 등록</h2>
+
 	<form action="AddAdminCtrl" class="frm" method="post" name="pform" onsubmit="return pCheck(this)">
-		<table>
+		<table class="tb">
 			<tr>
 				<th class="item_name">
 					<label for="p_num">아이디</label>
@@ -72,13 +72,16 @@
 					<input type="number" name="ad_birthyear" id="ad_birthyear" class="in_data" placeholder="출생년도 입력" required />
 				</td>
 			</tr>
-			<tr>
-				<td><input type="submit" value="등록" class="in_btn"/></td>
-				<td><input type="reset" value="취소" class="in_btn"/></td>
-			</tr>
 		</table>
+		    <hr />
+		<div class="btn_wrap">	
+			<button type="submit" class="in_btn" onclick="">등록</button>
+			<button type="reset" class="in_btn" onclick="">취소</button>
+		</div>	
 	</form>
 	<!-- 푸터 -->
+	</section>
 	<%@ include file="footer.jsp" %>
+	</div>
 </body>
 </html>
