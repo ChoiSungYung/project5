@@ -3,13 +3,7 @@
 <%@ page import="java.sql.*" %>    
 <%@ page import="java.util.*" %>
 <%@ page import="com.company.model.MemberVO" %>
-<%
-	MemberVO mem = (MemberVO) request.getAttribute("mem");
-	String m_job = mem.getM_job();
-	m_job = (m_job=="A1")? "학생" : m_job;
-	m_job = (m_job=="A2")? "회사원" : m_job;
-	m_job = (m_job=="A3")? "기타" : m_job;
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,11 +27,11 @@
 	table { display:table; border-collapse:collapse; }
 	tr { display:table-row; }
 	th, td { display:table-cell; }
-	.tb { width:600px; margin:20px auto; }
+	.tb {width: 600px;margin:10px auto;}
 	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
 	.tb th { border-top:2px solid #333; background:#ffd35e; }
 	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
-	.btn_wrap { width:220px; margin:20px auto; }
+	.btn_wrap { width:400px; margin:20px auto; }
 	.btn_wrap .in_btn { display:block; width:80px; margin:15px; background-color:#333; color:#fff; 
 	text-align:center; border:0; outline:0; float:left; line-height:38px; }
 	.btn_wrap .in_btn:hover { background-color:deeppink; }
@@ -65,8 +59,10 @@
 </script>	
 <div class="wrap">
 <%@ include file="admin_header.jsp" %>
-<h2 class="tit">상세 회원 정보 수정</h2>
-<form action="EditMemberCtrl" method="post" id="frm" name="frm">
+<section class="content">
+
+<h2 class="tit">회원 추가</h2>
+<form action="AddMemberCtrl" method="post" id="frm" name="frm">
 	<table class="tb">
 		<tbody>
 			<tr>
@@ -74,7 +70,7 @@
 					<label for="uid">아이디</label>
 				</th>
 				<td class="col_data">
-					<input type="text" id="uid" name="uid" class="in_data" value="<%=mem.getM_id() %>" readonly required />
+					<input type="text" id="uid" name="uid" class="in_data" value="" required />
 				</td>
 			</tr>
 			<tr>
@@ -82,7 +78,7 @@
 					<label for="upw" >비밀번호</label>
 				</th>
 				<td class="col_data">
-					<input type="password" id="upw" name="upw" class="in_data" value="<%=mem.getM_pw() %>" readonly />
+					<input type="text" id="upw" name="upw" class="in_data" value="" required />
 				</td>
 			</tr>
 			<tr>
@@ -90,23 +86,23 @@
 					<label for="uname">회원명</label>
 				</th>
 				<td class="col_data">
-					<input type="text" id="uname" name="uname" class="in_data" value="<%=mem.getM_name() %>" />
+					<input type="text" id="uname" name="uname" class="in_data" value="" required />
 				</td>
 			</tr>
 			<tr>
 				<th class="col_hd">
-					<label for="ubirth">이메일</label>
+					<label for="uemail">이메일</label>
 				</th>
 				<td class="col_data">
-					<input type="text" id="uemail" name="uemail" class="in_data" value="<%=mem.getM_email() %>"/>
+					<input type="text" id="uemail" name="uemail" class="in_data" value="" required />
 				</td>
 			</tr>
 			<tr>
 				<th class="col_hd">
-					<label for="uregdate">전화번호</label>
+					<label for="utel">전화번호</label>
 				</th>
 				<td class="col_data">
-					<input type="text" id="utel" name="utel" class="in_data" value="<%=mem.getM_tel() %>"/>
+					<input type="text" id="utel" name="utel" class="in_data" value="" required />
 				</td>
 			</tr>
 			<tr>
@@ -114,7 +110,7 @@
 					<label for="uzip" class="lb">우편번호</label>
 				</th>
 				<td>
-					<input type="text" name="uzip" id="uzip" value="<%=mem.getM_zip() %>" readonly/>
+					<input type="text" name="uzip" id="uzip" readonly/>
 					<input type="button" class="chk_button" value="주소찾기" onclick="findAddr()"/>
 				</td>
 			</tr>
@@ -123,8 +119,8 @@
 					<label for="uaddr1">집주소</label>
 				</th>
 				<td>
-					<input type="text" name="uaddr1" id="uaddr1"  value="<%=mem.getM_addr1() %>" class="in_data" readonly/>
-					<input type="text" name="uaddr2" id="uaddr2"  value="<%=mem.getM_addr2() %>" class="in_data"/>
+					<input type="text" name="uaddr1" id="uaddr1" class="in_data" readonly/>
+					<input type="text" name="uaddr2" id="uaddr2" placeholder="상세주소 입력" class="in_data"/>
 				</td>
 			</tr>
 			<tr>
@@ -148,16 +144,7 @@
 		<button type="reset" class="in_btn" onclick="">취소</button>
 	</div>	
 </form>
- <script>
- 		document.getElementById("uyesno").addEventListener("click", function(){
- 			if(this.value=="yes") {
- 				this.value = "no";
- 				return false;
- 			} else {
- 				this.value = "yes";
- 			}
- 		});
- </script>	
+ </section>
  <%@ include file="footer.jsp" %>
 </div>
 </body>

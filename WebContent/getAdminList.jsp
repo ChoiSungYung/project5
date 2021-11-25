@@ -2,11 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.company.model.MemberVO" %> 
+<%@ page import="com.company.model.AdminVO" %> 
 <%
-	ArrayList<MemberVO> memberList = (ArrayList<MemberVO>) request.getAttribute("memberList");
-//	MemberVO mem = (MemberVO) request.getAttribute("memberList");
+	ArrayList<AdminVO> adminList = (ArrayList<AdminVO>) request.getAttribute("adminList");
 
+	//MemberVO mem = (MemberVO) request.getAttribute("memberList");
 %>   
 <!DOCTYPE html>
 <html>
@@ -25,13 +25,14 @@
     <link rel="stylesheet" href="./css/ban.css">
     <link rel="stylesheet" href="./css/form.css">
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<style>
 	.tit { padding: 30px 30px; text-align:center; }
 	table { display:table; border-collapse:collapse; }
 	tr { display:table-row; }
 	th, td { display:table-cell; }
-	.tb { width:1400px; margin:20px auto; }
-	.tb th, .tb td { width:auto; line-height:36px; border-bottom:1px solid #333; }
+	.tb {width: 600px;margin:10px auto;}
+	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
 	.tb th { border-top:2px solid #333; background:#ffd35e; }
 	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
 	.btn_wrap { width:400px; margin:20px auto; }
@@ -44,52 +45,30 @@
 <div class="wrap">
 <%@ include file="admin_header.jsp" %>
 <section class="content">
-<h2 class="tit">회원 목록</h2>
-<form action="DeleteMemberCtrl" method="post" name="delForm"  onsubmit="return frm_submit(this)">
-
+<h2 class="tit">관리자 회원 목록</h2>
+<form action="DeleteAdminCtrl" method="post" name="delForm"  onsubmit="return frm_submit(this)">
 	<table class="tb">
 		<thead>
 			<tr>
 				<th class="item1">회원아이디 </th>
-				<th class="item2">회원비밀번호</th>
-				<th class="item3">이름</th>
-				<th class="item4">이메일</th>
-				<th class="item5">전화번호</th>
-				<th class="item6">주소</th>
-				<th class="item7">직업</th>
-				<th class="item8">가입일</th>
-				<th class="item9">삭제</th>
+				<th class="item2">이름</th>
+				<th class="item3">출생년도</th>
+				<th class="item4">삭제</th>
 			</tr>
 		</thead>
 		<tbody>
 <%	
 	int cnt=0;
-	for(int i=0;i<memberList.size();i++){
+	for(int i=0;i<adminList.size();i++){
 		cnt=i+1;
-		MemberVO mem = memberList.get(i);
-		String m_job = mem.getM_job();
+		AdminVO admin = adminList.get(i);
 %>	
 			<tr>
-				<td class="item1"><a href="EditMemberFormCtrl?id=<%=mem.getM_id() %>"><%=mem.getM_id() %></a></td>
-				<td class="item2"><%=mem.getM_pw() %></td>
-				<td class="item3"><%=mem.getM_name() %></td>
-				<td class="item4"><%=mem.getM_email() %></td>
-				<td class="item5"><%=mem.getM_tel() %></td>
-				<td class="item6"><%=mem.getM_addr1() %>&nbsp;<%=mem.getM_addr2() %></td>
-				<td class="item7">
-<%
-	if(m_job.equals("A1")){
-		out.println("학생");
-	} else if(m_job.equals("A2")){
-		out.println("회사원");
-	} else {
-		out.println("기타");
-	}
-%>
-				</td>
-				<td class="item8"><%=mem.getRegdate() %></td>
-				<td class="item9">
-					<input type="checkbox"  name="ck"  id="ck<%=i %>"  class="ck_item" value="<%=mem.getM_id() %>"/>
+				<td class="item1"><a href="EditAdminFormCtrl?id=<%=admin.getUserid() %>"><%=admin.getUserid() %></a></td>
+				<td class="item2"><%=admin.getName() %></td>
+				<td class="item3"><%=admin.getBirthyear() %></td>
+				<td class="item4">
+					<input type="checkbox"  name="ck"  id="ck<%=i %>"  class="ck_item" value="<%=admin.getUserid() %>"/>
 				</td>
 			</tr>
 <%

@@ -32,7 +32,7 @@ public class GetNoticeListCtrl extends HttpServlet {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			con = DriverManager.getConnection(url, db_id, db_pw);
-			sql = "select * from notice";
+			sql = "select * from notice order by n_id DESC";
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 			ArrayList<NoticeVO> noticeList = new ArrayList<NoticeVO>();	

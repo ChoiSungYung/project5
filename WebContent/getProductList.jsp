@@ -28,12 +28,12 @@
 	table { display:table; border-collapse:collapse; }
 	tr { display:table-row; }
 	th, td { display:table-cell; }
-	.tb { width:1200px; margin:20px auto; }
+	.tb { width:600px; margin:20px auto; }
 	.tb img{ width:100px; height:auto; }
-	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
+	.tb th, .tb td { width:auto; line-height:36px; border-bottom:1px solid #333; }
 	.tb th { border-top:2px solid #333; background:#ffd35e; }
 	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
-	.btn_wrap { width:220px; margin:20px auto; }
+	.btn_wrap { width:400px; margin:20px auto; }
 	.btn_wrap .in_btn { display:block; width:80px; margin:15px; background-color:#333; color:#fff; 
 	text-align:center; border:0; outline:0; float:left; line-height:38px; }
 	.btn_wrap .in_btn:hover { background-color:deeppink; }
@@ -42,6 +42,7 @@
 <body>
 <div class="wrap">
 <%@ include file="admin_header.jsp" %>
+<section class="content">
 	<h2 class="tit">상품목록</h2>
 	<form action="DeleteProductCtrl" name="frm" id="frm" method="post" onsubmit="return frm_submit(this)">	
 	<table class="tb">
@@ -52,7 +53,7 @@
 				<th class="item3">제품가격</th>
 				<th class="item4">수량</th>
 				<th class="item5">이미지</th>
-				<th class="item6">편집</th>
+				<th class="item6">삭제</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -84,10 +85,12 @@
 		</tbody>
 	</table>
 		<div class="btn_wrap">	
+			<button type="button" class="in_btn" onClick="location.href='addProductForm.jsp'">등록</button>
 			<button type="submit" class="in_btn" onclick="">삭제</button>
 			<button type="reset" class="in_btn" onclick="">취소</button>
 		</div>	
 	</form>
+</section>
 <%@ include file="footer.jsp" %>
 </div>
 <script>
@@ -107,5 +110,6 @@ function frm_submit(f){		//f:form 태그에서 보내온 데이터
 		}
 	}
 }
+</script>
 </body>
 </html>

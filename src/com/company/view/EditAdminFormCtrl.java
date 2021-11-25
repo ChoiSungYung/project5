@@ -13,16 +13,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.company.model.MemberVO;
+import com.company.model.AdminVO;
 
-@WebServlet("/EditMemberFormCtrl")
-public class EditMemberFormCtrl extends HttpServlet {
+@WebServlet("/EditAdminFormCtrl")
+public class EditAdminFormCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uid = request.getParameter("id");
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		String uid = request.getParameter("id");
+		
+		//컨넥터/상태코드/DB 관련 변수에 대한 선언
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -31,30 +33,26 @@ public class EditMemberFormCtrl extends HttpServlet {
 		String db_pw = "tiger";
 		String sql;
 		try {
+			//드라이버로딩~sql 실행
 			Class.forName("oracle.jdbc.OracleDriver");
 			con = DriverManager.getConnection(url, db_id, db_pw);
-			sql = "select * from membership where m_id=?";
+			sql = "select * from admin_member where userid=?";
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, uid);
 			System.out.println(uid);
 			rs = stmt.executeQuery();
-			MemberVO mem = new MemberVO();
+			AdminVO admin = new AdminVO();
 						
 			if(rs.next()) {
-				mem.setM_id(rs.getString("m_id"));
-				mem.setM_pw(rs.getString("m_pw"));
-				mem.setM_name(rs.getString("m_name"));
-				mem.setM_email(rs.getString("m_email"));
-				mem.setM_tel(rs.getString("m_tel"));
-				mem.setM_zip(rs.getString("m_zip"));
-				mem.setM_addr1(rs.getString("m_addr1"));
-				mem.setM_addr2(rs.getString("m_addr2"));
-				mem.setM_job(rs.getString("m_job"));
+				admin.setUserid(rs.getString("userid"));
+				admin.setPasswd(rs.getString("passwd"));
+				admin.setName(rs.getString("name"));
+				admin.setBirthyear(rs.getInt("birthyear"));
 			} else {
-				response.sendRedirect("GetMemberListCtrl");
+				response.sendRedirect("GetAdminListCtrl");
 			}
-			request.setAttribute("mem", mem);
-			RequestDispatcher view = request.getRequestDispatcher("editMemberForm.jsp");
+			request.setAttribute("admin", admin);
+			RequestDispatcher view = request.getRequestDispatcher("editAdminForm.jsp");
 			view.forward(request, response);
 			rs.close();
 			stmt.close();

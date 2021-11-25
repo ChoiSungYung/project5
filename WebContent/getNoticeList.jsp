@@ -29,11 +29,11 @@
 	table { display:table; border-collapse:collapse; }
 	tr { display:table-row; }
 	th, td { display:table-cell; }
-	.tb { width:1200px; margin:20px auto; }
-	.tb th, .tb td { width:300px; line-height:36px; border-bottom:1px solid #333; }
+	.tb { width:800px; margin:20px auto; }
+	.tb th, .tb td { width:auto; line-height:36px; border-bottom:1px solid #333; }
 	.tb th { border-top:2px solid #333; background:#ffd35e; }
 	.tb tbody tr:nth-child(2n) td { background:#fff6de; }
-	.btn_wrap { width:220px; margin:20px auto; }
+	.btn_wrap { width:400px; margin:20px auto; }
 	.btn_wrap .in_btn { display:block; width:80px; margin:15px; background-color:#333; color:#fff; 
 	text-align:center; border:0; outline:0; float:left; line-height:38px; }
 	.btn_wrap .in_btn:hover { background-color:deeppink; }
@@ -42,6 +42,8 @@
 <body>
 <div class="wrap">
 <%@ include file="admin_header.jsp" %>
+<section class="content">
+
 	<h2 class="tit">공지사항</h2>
 	<form action="DeleteNoticeCtrl" name="frm" id="frm" method="post" onsubmit="return frm_submit(this)">	
 	<table class="tb">
@@ -49,9 +51,10 @@
 			<tr>
 				<th class="item1">번호</th>
 				<th class="item2">제목</th>
-				<th class="item3">작성자</th>
-				<th class="item4">작성일시</th>
-				<th class="item5">편집</th>
+				<th class="item3">제목</th>
+				<th class="item4">작성자</th>
+				<th class="item5">작성일시</th>
+				<th class="item6">삭제</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -64,9 +67,10 @@
 			<tr>
 				<td class="item1"><%=cnt %></td>
 				<td class="item2"><a href="EditNoticeFormCtrl?id=<%=noti.getN_id() %>"><%=noti.getTitle() %></a></td>
-				<td class="item3"><%=noti.getAuthor() %></td>
-				<td class="item4"><%=noti.getResdate() %></td>
-				<td class="item5">
+				<td class="item3"><%=noti.getContent() %></td>
+				<td class="item4"><%=noti.getAuthor() %></td>
+				<td class="item5"><%=noti.getResdate() %></td>
+				<td class="item6">
 					<input type="checkbox"  name="ck"  id="ck<%=i %>"  class="ck_item" value="<%=noti.getN_id() %>"/>
 				</td>
 			</tr>
@@ -76,10 +80,12 @@
 		</tbody>
 	</table>
 		<div class="btn_wrap">	
+			<button type="button" class="in_btn" onClick="location.href='addNoticeForm.jsp'">등록</button>
 			<button type="submit" class="in_btn" onclick="">삭제</button>
 			<button type="reset" class="in_btn" onclick="">취소</button>
 		</div>	
 	</form>
+</section>
 <%@ include file="footer.jsp" %>
 </div>
 <script>

@@ -1,4 +1,4 @@
-package com.company.view;
+package com.company.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -15,10 +15,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.company.model.AdminVO;
 import com.company.model.MemberVO;
 
-@WebServlet("/GetMemberListCtrl")
-public class GetMemberListCtrl extends HttpServlet {
+@WebServlet("/AddAdminFormCtrl")
+public class AddAdminFormCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,38 +33,30 @@ public class GetMemberListCtrl extends HttpServlet {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			con = DriverManager.getConnection(url, db_id, db_pw);
-			sql = "select * from membership order by regdate desc";
+			sql = "select * from admin_member";
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
-			ArrayList<MemberVO> memberList = new ArrayList<MemberVO>();	
+			ArrayList<AdminVO> adminList = new ArrayList<AdminVO>();	
+			//select로 검색한 데이터를 저장한 공간 마련
 			while(rs.next()) {
-				String m_id = rs.getString("m_id");
-				String m_pw = rs.getString("m_pw");
-				String m_name = rs.getString("m_name");
-				String m_email = rs.getString("m_email");
-				String m_tel = rs.getString("m_tel");
-				String m_zip = rs.getString("m_zip");
-				String m_addr1 = rs.getString("m_addr1");
-				String m_addr2 = rs.getString("m_addr2");
-				String m_job = rs.getString("m_job");
-				Date regdate = rs.getDate("regdate");	
+				String ad_id = rs.getString("userid");
+				String ad_pw = rs.getString("passwd");
+				String ad_name = rs.getString("name");
+				int ad_birthyear = rs.getInt("birthyear");
+	
 				
-				MemberVO mem = new MemberVO();	
-				mem.setM_id(m_id);
-				mem.setM_pw(m_pw);
-				mem.setM_name(m_name);
-				mem.setM_email(m_email);
-				mem.setM_tel(m_tel);
-				mem.setM_zip(m_zip);
-				mem.setM_addr1(m_addr1);
-				mem.setM_addr2(m_addr2);
-				mem.setM_job(m_job);
-				mem.setRegdate(regdate);
-				memberList.add(mem);	
+				AdminVO admin = new AdminVO();	// 한 회원의 컬럼 데이터를 VO에 담는다.
+				admin.setUserid(ad_id);
+				admin.setPasswd(ad_pw);
+				admin.setBirthyear(ad_birthyear);
+				admin.setName(ad_name);
+				
+				//mem.setYesno(rs.getString("yesno"));
+				adminList.add(admin);	//VO에 담긴 여러 건의 데이터들를 List에 담는다. 
 			}
-			request.setAttribute("memberList", memberList);		
-			RequestDispatcher view = request.getRequestDispatcher("getMemberList.jsp"); 
-			view.forward(request, response);	
+			request.setAttribute("adminList", adminList);		//보내질 List 데이터를 지정
+			RequestDispatcher view = request.getRequestDispatcher("getAdminList.jsp");  //보내질 곳 지정 
+			view.forward(request, response);	//지정한 URL로 데이터를 송신
 			rs.close();
 			stmt.close();
 			con.close();

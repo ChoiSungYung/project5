@@ -15,6 +15,7 @@
 		out.println("<li><a href='./login.jsp'>로그인</a></li>");
 	}
 %>
+	 			<li><a href="./admin.jsp">관리자모드</a></li>
 	 			<li><a href="./agreement.jsp">회원가입</a></li>
 	 			<li><a href="./companyinfo.jsp">회사소개</a></li>
 			 	<li><a href="">사이트맵</a></li>
