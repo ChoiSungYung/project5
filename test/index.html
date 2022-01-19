@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>메인 레이아웃</title>
+    <meta name="keywords" content="관련 검색어를 단어로 분리하고, 단어마다 ','로 구분하여 입력하며, 자세하게 기술하도록 한다.">
+    <meta name="description" content="해당 사이트의 자세한 설명을 검색어와 함께 입력하여 기술하도록 한다.">
+    <meta name="title" content="기관명이나 사이트명을 입력한다."><!-- 태그의 속성 : attribute  -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+    table { display:table; } /* css의 속성 : property */
+    th, td { display:table-cell; }    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+<!--        헤더 시작 -->
+        <header class="hd">
+            <a href="index.html" class="logo">
+<!--   <img src="https://placehold.it/120x50/333" alt="로고"> -->
+                <img src="https://loremflickr.com/120/50" alt="로고">
+            </a>
+            <nav id="tnb">
+                <ul class="menu">
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="mail.html">Contact us</a></li>
+                </ul>
+            </nav>
+            <nav id="gnb">
+                <ul class="menu">
+                    <li><a href="sub1.html">회사소개</a></li>
+                    <li><a href="sub2.html">제품소개</a></li>
+                    <li><a href="sub3.html">서비스</a></li>
+                    <li><a href="sub4.html">고객센터</a></li>
+                    <li><a href="sub5.html">자료실</a></li>
+                </ul>
+            </nav>
+        </header>
+<!--        헤더 끝-->
+        <main class="contents">
+            <figure class="vs">
+                <img src="https://placehold.it/1200x400/333" alt="배너" class="pic">
+            </figure>
+            <div class="page" id="page1">
+                <h2 class="page_tit">포토 갤러리 목록</h2>
+                <ul class="lst">
+                    <li class="item1">
+                        <a href="sub2.html#page1">
+                            <img src="https://placehold.it/330x200" alt="목록1" class="thumb">
+                            <h3 class="lst_tit">목록제목1</h3>
+                            <p class="lst_com">목록내용1</p>
+                        </a>
+                    </li>
+                    <li class="item2">
+                        <a href="sub2.html#page2">
+                            <img src="https://placehold.it/330x200" alt="목록2" class="thumb">
+                            <h3 class="lst_tit">목록제목2</h3>
+                            <p class="lst_com">목록내용2</p>
+                        </a>
+                    </li>
+                    <li class="item3">
+                        <a href="sub2.html#page3">
+                            <img src="https://placehold.it/330x200" alt="목록3" class="thumb">
+                            <h3 class="lst_tit">목록제목3</h3>
+                            <p class="lst_com">목록내용3</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page" id="page2">
+                <h2 class="page_tit">공지사항</h2>
+                <table id="notice">
+                    <thead>
+                        <tr>
+                            <th class="n_num">번호</th>
+                            <th class="n_tit">제목</th>
+                            <th class="n_date">등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="n_num">5</td>
+                            <td class="n_tit">
+                                <a href="sub4.html">공지사항 제목 클릭시 이동 공지사항 제목 클릭시 이동 공지사항 제목 클릭시 이동 공지사항 제목 클릭시 이동 공지사항 제목 클릭시 이동공지사항 제목 클릭시 이동 공지사항 제목 클릭시 이동 공지사항 제목 클릭시 이동 공지사항 제목 클릭시 이동공지사항 제목 클릭시 이동공지사항 제목 클릭시 이동공지사항 제목 클릭시 이동공지사항 제목 클릭시 이동공지사항 제목 클릭시 이동5</a>
+                            </td>
+                            <td class="n_date">2019-09-10</td>
+                        </tr>
+                        <tr>
+                            <td class="n_num">4</td>
+                            <td class="n_tit">
+                                <a href="sub4.html">공지사항 제목 클릭시 이동4</a>
+                            </td>
+                            <td class="n_date">2019-09-09</td>
+                        </tr>
+                        <tr>
+                            <td class="n_num">3</td>
+                            <td class="n_tit">
+                                <a href="sub4.html">공지사항 제목 클릭시 이동3</a>
+                            </td>
+                            <td class="n_date">2019-09-08</td>
+                        </tr>
+                        <tr>
+                            <td class="n_num">2</td>
+                            <td class="n_tit">
+                                <a href="sub4.html">공지사항 제목 클릭시 이동2</a>
+                            </td>
+                            <td class="n_date">2019-09-07</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page" id="page3">
+                <h2 class="page_tit">사이트 맵</h2>
+                <div class="sitemap">
+                    <ul class="site">
+                        <li class="cate1">
+                            <dl>
+                                <dt>회사소개</dt>
+                                <dd><a href="sub1.html#page1">회사연혁</a></dd>
+                                <dd><a href="sub1.html#page2">경영이념</a></dd>
+                                <dd><a href="sub1.html#page3">인사말</a></dd>
+                                <dd><a href="sub1.html#page4">오시는길</a></dd>
+                            </dl>
+                        </li>
+                        <li class="cate2">
+                            <dl>
+                                <dt>제품소개</dt>
+                                <dd><a href="sub2.html#page1">제품1</a></dd>
+                                <dd><a href="sub2.html#page2">제품2</a></dd>
+                                <dd><a href="sub2.html#page3">제품3</a></dd>
+                                <dd><a href="sub2.html#page4">제품4</a></dd>
+                            </dl>
+                        </li>
+                        <li class="cate3">
+                            <dl>
+                                <dt>서비스</dt>
+                                <dd><a href="sub3.html#page1">온라인서비스</a></dd>
+                                <dd><a href="sub3.html#page2">방문서비스</a></dd>
+                                <dd><a href="sub3.html#page3">택배서비스</a></dd>
+                            </dl>
+                        </li>
+                        <li class="cate4">
+                            <dl>
+                                <dt>고객센터</dt>
+                                <dd><a href="sub4.html#page1">공지사항</a></dd>
+                                <dd><a href="sub4.html#page2">자주하는질문</a></dd>
+                                <dd><a href="sub4.html#page3">질문 및 답변</a></dd>
+                                <dd><a href="sub4.html#page4">사용후기</a></dd>
+                            </dl>
+                        </li>
+                        <li class="cate5">
+                            <dl>
+                                <dt>자료실</dt>
+                                <dd><a href="sub5.html#page1">제품 메뉴얼</a></dd>
+                                <dd><a href="sub5.html#page2">인공지능 설정</a></dd>
+                                <dd><a href="sub5.html#page3">무료이미지</a></dd>
+                                <dd><a href="sub5.html#page4">제품 VR</a></dd>
+                            </dl>
+                        </li>
+                        <li class="cate6">
+                            <dl>
+                                <dt>카테고리6</dt>
+                                <dd><a href="">사이트링크</a></dd>
+                                <dd><a href="">사이트링크</a></dd>
+                                <dd><a href="">사이트링크</a></dd>
+                                <dd><a href="">사이트링크</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer class="ft">
+            <p class="addr">대전시 서구 둔산동 1160 오라클빌딩 3F / 042-480-2811</p>
+            <p class="copyright">Copyright &copy; KKT CO, LTD. All rights reserved. @ 2019</p>
+        </footer>
+    </div>
+</body>
+</html>

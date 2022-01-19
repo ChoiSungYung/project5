@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fonts/font.css">
+    <link rel="stylesheet" href="./slick-theme.css">
+    <link rel="stylesheet" href="./slick.css">
+    <link rel="stylesheet" href="./mobile_style.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/common.js"></script>
+    <title>통영 장피랑</title>
+    <script>
+        // index 메인 슬라이드 슬라이드
+        $(document).ready(function(){
+            $('.main_bxslider').bxSlider({
+                auto: true,
+                autoControls: false,
+                stopAutoOnClick: false,
+                pager: true, 
+                pause: 5000,
+            });
+        });
+    
+        
+        // main 장피장에 가보장 slick 슬라이드
+        $(document).ready(function(){
+            $('.autoplay').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                responsive: [
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                    }
+                ]
+            });
+        });
+
+    
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header id="hd">
+            <div class="hd_wrap">
+                <nav id="nav">
+                    <div class="nav_wr">
+                    <div class="nav_wrap">
+                    <h1> 
+                        <a href="index.html" class="top_logo" title="통영 장피랑 메인화면 이동">
+                            <img id="logo1" src="./images/top_logo.png" alt="통영 장피랑 로고"/>
+                            <img id="logo2" style="display: none;" src="./images/top_logo_b.png" alt="통영 장피랑 검정 로고"/>
+                        </a>  
+                   </h1>       
+                    <ul class="nav dept1">
+                        <li class="dept1_li">
+                            <a class="dept1_a" href="sub1-1.html">생생海</a>
+                            <div class="dept1_a_border"></div>
+                                <div class="dept2">
+                                <ul class="dept2_ul">
+                                    <li>
+                                        <a href="sub1-1.html">소통하場
+                                            <span>스마트 온라인 시장 서비스</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sub1-2.html">행복하場
+                                            <span>디지털 사이니지 서비스</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sub1-3.html">둘러보場
+                                            <span>관광지 안내 위치 서비스</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>  
+                        </li>
+
+                        <li class="dept1_li">
+                            <a class="dept1_a" href="sub2-1.html">편리海</a>
+                            <div class="dept2">
+                                <ul class="dept2_ul">
+                                    <li>
+                                        <a href="sub2-1.html">거래하場
+                                            <span>스마트 경매 서비스</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sub2-2.html">알려주場
+                                            <span>스마트 시세알림이 서비스</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sub2-3.html">주문하場
+                                            <span>Aop 다운로드 및 이용안내</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dept1_li">
+                            <a class="dept1_a" href="sub3-1.html">똑똑海</a>
+                            <div class="dept2">
+                                <ul class="dept2_ul">
+                                    <li>
+                                        <a href="sub3-1.html">사업 소개
+                                            <span>통영 스마트타운 챌린지</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sub3-2.html">장피랑 소개
+                                            <span>서호시장 / 중앙시장</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="viewmore_box" target="_blank" href="jangpirang_map.html" title="모바일 장피랑현황 이동">
+                                            지금 장피랑<img src="./images/moreview_i.png" alt="지금 장피랑 더보기"/>
+                                            <span>인프라 현황 데이터</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>      
+                        <li class="dept1_li">
+                            <a class="dept1_a" href="sub4-1.html">함께海</a>
+                            <div class="dept2">
+                                <ul class="dept2_ul">
+                                    <li>
+                                        <a href="sub4-1.html">공지사항
+                                            <span class="txt-i">1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sub4-2.html">1:1문의
+                                            <span class="txt-i">1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="sub4-3.html">같이하場
+                                            <span>리빙랩 시민참여단 활동</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>                                
+                    </ul>
+                    </div> <!--nav_wrap-->
+                    </div> <!--nav_wr-->
+                </nav>
+            </div> <!--hd_wrap-->
+        </header>    
+
+        <div class="page-indicator">
+            <ul>
+                <li><a href="#page-1"><span class="border_s"></span> <span class="border_t" >HOME</span> </a></li>
+                <li><a href="#page-2"><span class="border_s"></span> <span class="border_t">생생海</span></a></li>
+                <li><a href="#page-3"><span class="border_s"></span> <span class="border_t">편리海</span></a></li>
+                <li><a href="#page-4"><span class="border_s"></span> <span class="border_t">주문하場</span></a></li>
+                <li><a href="#page-5"><span class="border_s"></span> <span class="border_t">똑똑海</span></a></li>
+                <li><a href="#page-6"><span class="border_s"></span> <span class="border_t">함께海</span></a></li>
+            </ul>
+        </div>
+        
+        <div class="pages">
+            <section id="page-1" class="sec page page-1">
+                <video id="myvideo" muted autoplay loop poster="./images/main_img01.png">
+                    <source src="./images/main_video.mp4" type="video/mp4">
+                </video>
+                <a title="스크롤 버튼" href="#sec1" class="main_scroll"><img src="./images/scroll-btn.png" alt="스크롤 버튼"/></a>  
+
+                <button class="play play_stop" id="mv_btn">배경영상 멈춤</button>
+                <button style="display: none;" class="play play_start" id="mv_btn2">배경영상 재생</button>
+                <script>
+                //순수 자바스크립트로 하는 경우    
+                //var vdo = document.getElementById("myvideo");   //비디오 객체 선택자
+                //var mv_btn = document.getElementById("mv_btn");     //멈춤 버튼 선택자
+                //var mv_btn2 = document.getElementById("mv_btn2");   //재생 버튼 선택자      
+                //mv_btn.addEventListener("click",function(){ //멈춤 버튼을 누르면
+                //    if(vdo.paused){ //비디오가 멈춰있으면, play하고, 재생중이면, stop하도록 한다.   
+//                        vdo.play(); 
+//                    } else {
+//                        vdo.pause();
+//                    }
+//                });
+//                mv_btn2.addEventListener("click",function(){
+//                    if(vdo.paused){    
+//                        vdo.play(); 
+//                    } else {
+//                        vdo.pause();
+//                    }
+//                });    
+                </script>
+                <script>
+                //jQuery를 혼용하는 경우 - jQuery에는 비디오 객체에 대한 제어 메서드가 없으므로 자바스크립트를 활용해야함
+                $(function(){
+                    var vdo = document.getElementById("myvideo");
+                    $("#mv_btn, #mv_btn2").click(function(){
+                       if(vdo.paused){
+                           vdo.play();
+                       } else {
+                           vdo.pause();
+                       } 
+                    });
+                });    
+                </script>
+                <div class="visual">
+                <ul class="main_bxslider">
+                    <li class="slideImg1">
+                        <div class="main_cont">
+                            <p>
+                                <h1>
+                                    <img src="./images/cloud-i.png" alt="오늘 날씨 아이콘"/>
+                                    <span>흐림 32˚</span>
+                                    <span>어제보다 6˚ 높아요</span>
+                                </h1>
+                                <h2>장피랑은 <span class="txt_bold">편리海</span></h2>
+                                <span class="main_txt3">상인이 주도하고 이용자가 편리한 스마트 전통시장<br>
+                                장피랑이 시작합니다.</span>
+                            <p>
+                           
+                        </div>
+                    </li>
+                    <li class="slideImg2">
+                        <div class="main_cont">
+                            <p>
+                                <h1>
+                                    <img src="./images/cloud-i.png" alt="오늘 날씨 아이콘"/>
+                                    <span>흐림 32˚</span>
+                                    <span>어제보다 6˚ 높아요</span>
+                                </h1>
+                                <h2>장피랑은 <span class="txt_bold">똑똑海</span></h2>
+                                <span class="main_txt3">통영 전통시장에 자리잡은 스마트인프라가<br>
+                                편리하고 활기찬 시장을 만듭니다.</span>
+                            <p>
+                            
+                        </div>
+                    </li>
+                    <li class="slideImg3">
+                        <div class="main_cont">
+                            <p>
+                                <h1>
+                                    <img src="./images/cloud-i.png" alt="오늘 날씨 아이콘"/>
+                                    <span>흐림 32˚</span>
+                                    <span>어제보다 6˚ 높아요</span>
+                                </h1>
+                                <h2>장피랑은 <span class="txt_bold">함께海</span></h2>
+                                <span class="main_txt3">장피랑을 만들어가는 사람들의 이야기<br>
+                                통영의 진솔하고 활기 넘치는 이야기를 만나보세요.</span>
+                            <p>
+                            
+                        </div>
+                    </li>
+                    <li class="slideImg4">
+                        <div class="main_cont">
+                            <p>
+                                <h1>
+                                    <img src="./images/cloud-i.png" alt="오늘 날씨 아이콘"/>
+                                    <span>흐림 32˚</span>
+                                    <span>어제보다 6˚ 높아요</span>
+                                </h1>
+                                <h2>장피랑은 <span class="txt_bold">생생海</span></h2>
+                                <span class="main_txt3">첨단CT기술을 통한 실시간 관리로<br>
+                                더욱 발전된 통영의 모습으로 나아갑니다.</span>
+                            <p>
+                            
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+             
+                </div>
+           </section>
+
+            <section id="page-2" class="sec page page-2">
+                <div class="cont_wrap">
+                    <div class="sec_img">
+                        <img src="./images/illu-img01.png" alt="생생海 이미지">
+                    </div>
+                    <h2 class="sec_tit">장피랑에 <span class="color_bold">생생海</span></h2>
+                    <p class="sec_txt2">사람과 기술이 만나는 곳. 통영 스마트전통시장에 담긴 이야기를 따라 미리 만나보는 장피랑에 가보장!</p>
+                    
+                    <ul class="secbox1 autoplay">
+                        <li>
+                            <div class="new"><img src="./images/new-i.png" alt="새글 아이콘"/></div>
+                            <a href="sub1-1-2.html">
+                                <h3>한 점의 방어회가 당신의
+                                    입에 들어가기까지!</h3>
+                                <p>싱싱한 방어를 건져올리는 배 위에서
+                                    부터 깨끗하게 손질되어 우리 집 식탁
+                                    에 올라오는 과정을 생생하게 VOD에 
+                                    담아보았습니다. </p>
+                                <span>#제철 #방어 #장보기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="new"><img src="./images/new-i.png" alt="새글 아이콘"/></div>
+                            <a href="sub1-1-2.html">
+                                <h3>한 점의 방어회가 당신의
+                                    입에 들어가기까지!</h3>
+                                <p>싱싱한 방어를 건져올리는 배 위에서
+                                    부터 깨끗하게 손질되어 우리 집 식탁
+                                    에 올라오는 과정을 생생하게 VOD에 
+                                    담아보았습니다. </p>
+                                <span>#제철 #방어 #장보기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="sub1-1-2.html">
+                                <h3>한 점의 방어회가 당신의
+                                    입에 들어가기까지!</h3>
+                                <p>싱싱한 방어를 건져올리는 배 위에서
+                                    부터 깨끗하게 손질되어 우리 집 식탁
+                                    에 올라오는 과정을 생생하게 VOD에 
+                                    담아보았습니다. </p>
+                                <span>#제철 #방어 #장보기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="sub1-1-2.html">
+                                <h3>한 점의 방어회가 당신의
+                                    입에 들어가기까지!</h3>
+                                <p>싱싱한 방어를 건져올리는 배 위에서
+                                    부터 깨끗하게 손질되어 우리 집 식탁
+                                    에 올라오는 과정을 생생하게 VOD에 
+                                    담아보았습니다. </p>
+                                <span>#제철 #방어 #장보기</span>
+                            </a>
+                        </li>    
+                        <li>
+                            <a href="sub1-1-2.html">
+                                <h3>한 점의 방어회가 당신의
+                                    입에 들어가기까지!</h3>
+                                <p>싱싱한 방어를 건져올리는 배 위에서
+                                    부터 깨끗하게 손질되어 우리 집 식탁
+                                    에 올라오는 과정을 생생하게 VOD에 
+                                    담아보았습니다. </p>
+                                <span>#제철 #방어 #장보기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="sub1-1-2.html">
+                                <h3>한 점의 방어회가 당신의
+                                    입에 들어가기까지!</h3>
+                                <p>싱싱한 방어를 건져올리는 배 위에서
+                                    부터 깨끗하게 손질되어 우리 집 식탁
+                                    에 올라오는 과정을 생생하게 VOD에 
+                                    담아보았습니다. </p>
+                                <span>#제철 #방어 #장보기</span>
+                            </a>
+                        </li>                                                                    
+                        
+                         <!--secbox_btn-->
+                    </ul>
+                    <!-- <button class=""><img src="./images/slide-btn01.png" alt="버튼1"/></button>
+                    <button class=""><img src="./images/slide-btn02.png" alt="버튼2"/></button> -->
+
+                </div> <!--cont_wrap-->
+            </section>
+
+
+            <section id="page-3" class="sec page page-3">
+                <div class="cont_wrap">
+                    <h2 class="sec_tit">장피랑은 <span class="color_bold">편리海</span></h2>
+                    <p class="sec_txt2">통영 전통시장의 싱싱하고 맛깔나는 먹거리를 더 싸고 편하게 만나는 방법!<br>
+                        편리해랑으로 오늘 시세를 미리 알아보고, 매주 찾아오는 똑똑해랑으로 경매도 참여해요.</p>
+                    
+                    <ul class="secbox1">
+                        <li>
+                            <a href="sub2-1.html">
+                                <h3>거래하場</h3>
+                                <p>싱싱한 제철상품을 시세보다 싼가격에!<br>
+                                    스마트 체험경매 일정을 알아볼까요?</p>
+                                <img src="./images/illu-img02.png" alt="똑똑해랑 이미지"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="sub2-2.html">
+                                <h3>알려주場</h3>
+                                <p>믿고 사는 우리 동네 전통시장<br>
+                                    투명한 시세정보를 확인해 보세요. </p>
+                                <img src="./images/illu-img03.png" alt="편리해랑 이미지"/>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div> <!--cont_wrap-->
+            </section>
+
+            <section id="page-4" class="sec page page-4">
+                <div class="cont_wrap">
+                    <span class="sec_subtit">장피랑이 우리집으로 온다구요?</span>
+                    <h2 class="sec_tit">주문하場</h2>
+                    <p class="sec_txt2">먹거리를 제일 잘 아는 상인들이 <span class="db">제일 좋은 상품으로 골라드릴게요.</span><br> 
+                        <span class="db">편하게 받아보기만 하세요.</span> <span class="db">내 손안의 장피랑, 모바일로도 준비되어있습니다.</span>
+                    </p>
+                    
+                    <div class="app_btn">
+                        <a title="App Store 화면 이동" href="sub2-3.html" class="ios_app">App Store</a>
+                        <a title="Google Play 화면 이동" href="sub2-3.html" class="android_app">Google Play</a>
+                    </div> <!--app_btn-->
+
+                    <div class="jang_img1"><img src="./images/illu-img07.png" alt="모바일 장피랑 이미지1"/></div>
+                    <div class="jang_img2"><img src="./images/smartphone.png" alt="모바일 장피랑 이미지2"/></div>
+                </div> <!--cont_wrap-->
+            </section>
+
+            <section id="page-5" class="sec page page-5">
+                <div class="cont_wrap">
+                    <h2 class="sec_tit">장피랑은 <span class="color_bold">똑똑海</span></h2>
+                    <p class="sec_txt2">스마트시설 기반의 전통시장 활성화 환경을 조성합니다.
+                    </p>
+                    
+                    <ul class="secbox1">
+                        <li>
+                            <a href="">
+                                <p class="box-i"><img src="./images/parking-i.png" alt="주차장 아이콘"/></p>
+                                <h3>주차장 공유 서비스</h3>
+                                <p><span class="num_color">10</span>개</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p class="box-i"><img src="./images/smartlocker-i.png" alt="스마트 물품 보관함 아이콘"/></p>
+                                <h3>스마트 물품 보관함</h3>
+                                <p><span class="num_color">10</span>개</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p class="box-i"><img src="./images/wifi-i.png" alt="공공 와이파이 아이콘"/></p>
+                                <h3>공공 WiFi</h3>
+                                <p><span class="num_color">10</span>개</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p class="box-i"><img src="./images/milestone-i.png" alt="스마트 이정표 서비스 아이콘"/></p>
+                                <h3>스마트 이정표<br>서비스</h3>
+                                <p><span class="num_color">10</span>개</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p class="box-i"><img src="./images/healthcare-i.png" alt="스마트 헬스케어 서비스 아이콘"/></p>
+                                <h3>스마트 헬스케어<br>서비스</h3>
+                                <p><span class="num_color">10</span>개</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p class="box-i"><img src="./images/mistspray-i.png" alt="미세안개 분무 서비스 아이콘"/></p>
+                                <h3>미세안개 분무<br>서비스</h3>
+                                <p><span class="num_color">10</span>개</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="app_btn">
+                        <a href="jangpirang_map.html" class="view_more">더 알아보기</a>
+                    </div> <!--app_btn-->
+
+                </div> <!--cont_wrap-->
+            </section>
+
+            <section id="page-6" class="sec page page-6">
+                <div class="cont_wrap">
+                    <h2 class="sec_tit">장피랑과 <span class="color_bold">함께海</span></h2>
+                    <p class="sec_txt2">통영 전통시장의 싱싱하고 맛깔나는 먹거리를 더 싸고 편하게 만나는 방법!<br>
+                        편리해랑으로 오늘 시세를 미리 알아보고, 매주 찾아오는 똑똑해랑으로 경매도 참여해요.</p>
+                    <div class="lab_btn">
+                        <a href="sub4-3.html">시민참여 리빙랩<br>알아보기</a>
+                    </div>
+
+                </div> <!--cont_wrap-->
+            </section>
+        </div> <!--pages-->
+
+        <footer>
+            <div class="cont_wrap">
+                <div class="ft_top">
+                    <ul>
+                        <li><a href="privacy.html">개인정보 처리방침</a></li>
+                        <li><a href="sub3-1.html">사업소개</a></li>
+                        <li><a href="direction.html">찾아오시는길</a></li>
+                        
+                    </ul>
+                    <a title="통영시 홈페이지로 이동" href="https://www.tongyeong.go.kr/" class="bottom_logo">
+                        <img src="./images/bottom_logo.png" alt="통영시 로고"/>
+                    </a>
+                </div>
+
+                <p class="ft_txt">
+                    53040 경상남도 통영시 통영해안로 515(무전동) T.<a href="tel">1577-0000</a>
+                    <span>Copyright(C)2021 Tongyeong Jangpirang  All rights reserved.</span>
+                </p>
+
+                
+            </div> <!--cont_wrap-->
+        </footer>
+
+   <!-- 모바일 메뉴 추가 -->
+		<!-- input id="toggle1" = label for="toggle1" 연결 -->
+		<input type="radio" name="menu" id="toggle1" class="none">
+		<input type="radio" name="menu" id="toggle2" class="none">
+		<!-- 토글 메뉴 -->
+		<label for="toggle1" class="toggle_btn"></label> 
+		<!-- 토글 메뉴 눌렀을 때 메뉴 화면 -->
+		<div id="gnbMo">
+			<label for="toggle2">close</label>
+			<!-- 메뉴 닫는 버튼 -->
+			<ul class="m_nav">
+				<li>
+                    <a class="dept1_a" href="sub1-1.html">생생海</a>
+                    <div class="dept1_a_border"></div>
+                        <div class="dept2">
+                        <ul class="dept2_ul">
+                            <li>
+                                <a href="sub1-1.html">소통하場
+                                    <span>스마트 온라인 시장 서비스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub1-2.html">행복하場
+                                    <span>디지털 사이니지 서비스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub1-3.html">둘러보場
+                                    <span>관광지 안내 위치 서비스</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>  
+                </li>
+				<li>
+                    <a class="dept1_a" href="sub2-1.html">편리海</a>
+                    <div class="dept2">
+                        <ul class="dept2_ul">
+                            <li>
+                                <a href="sub2-1.html">거래하場
+                                    <span>스마트 경매 서비스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub2-2.html">알려주場
+                                    <span>스마트 시세알림이 서비스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub2-3.html">주문하場
+                                    <span>Aop 다운로드 및 이용안내</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+				<li>
+                    <a class="dept1_a" href="sub3-1.html">똑똑海</a>
+                    <div class="dept2">
+                        <ul class="dept2_ul">
+                            <li>
+                                <a href="sub3-1.html">사업 소개
+                                    <span>통영 스마트타운 챌린지</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub3-2.html">장피랑 소개
+                                    <span>서호시장 / 중앙시장</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="viewmore_box" target="_blank" href="jangpirang_map.html">
+                                    지금 장피랑<img src="./images/moreview_i.png" alt="지금 장피랑 더보기"/>
+                                    <span>인프라 현황 데이터</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+				<li>
+                    <a class="dept1_a" href="sub4-1.html">함께海</a>
+                    <div class="dept2">
+                        <ul class="dept2_ul">
+                            <li>
+                                <a href="sub4-1.html">공지사항
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub4-2.html">1:1문의
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub4-3.html">같이하場
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+			</ul>
+		</div> <!--gnbMo-->
+
+    </div> <!--wrap-->
+</body>
+</html>

@@ -1,0 +1,20 @@
+@charset "utf-8";
+.content { clear:both; width: 100%; padding-top: 120px; }
+.vs { clear:both; width: 100%; height: auto; }
+.vs img { display:block; width: 100%; height: auto; } 
+
+.bread { clear: both; width: 100%; background-color:#f1f1f1; }
+.crumb { clear:both; width: 1440px; margin: 0 auto; 
+    padding-top: 20px; padding-bottom: 20px; }   
+.crumb .home { color:#333; padding-right: 10px; }
+.crumb .cur_txt { color:deepskyblue; padding-left: 10px; } 
+
+.con { clear:both; width: 100%; }
+.leftbar { width: 200px; float:left; min-height:60vh; background-color:#f1f1f1; }
+.lnb_tit { text-align: center; line-height: 3; background-color:#333; color:#fff; }    
+.lnb .menu li a { display:block; padding-left: 30px; color:#333; 
+    line-height: 38px;} 
+.lnb .menu li a.cur {  background-color:deepskyblue; color:#fff; }    
+.real { width:calc(100% - 220px); float:right; }  
+.page { clear: both; width: 100%; min-height:50vh; } 
+.page_tit { padding-top: 40px; line-height: 2.4; text-align:center; }    

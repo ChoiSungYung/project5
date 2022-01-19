@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>넬로숍 - 회원가입</title>
+	<link rel="shortcut icon" href="./images/favicon.png" sizes="16x16"><!-- 일반 메타포 아이콘 연결 -->
+	<link rel="apple-touch-icon" href="./images/favicon96.png" sizes="96x96"><!-- 아이폰에서의 연결 -->
+	<link rel="icon" href="./images/favicon192.png" sizes="192x192"><!-- 안드로이드폰에서의 연결 -->
+	<meta name="title" content="쿠쿠넬로 숍">
+	<meta name="description" content="정수기, 공기정청기, 생수 등을 생산하여 공급하는 전문 쇼핑몰입니다.">
+	<meta name="keywords" content="정수기, 공기청정기, 생수">
+	<meta name="subject" content="정수기 임대, 매매">
+    <meta property="og:type" content="website">
+	<meta property="og:url" content="http://kkt1004.github.io/web1">
+	<meta property="og:title" content="쿠쿠넬로 숍">
+	<meta property="og:image" content="./images/main_top1.png">
+	<meta property="og:description" content="정수기, 공기정청기, 생수 등을 생산하여 공급하는 전문 쇼핑몰입니다.">
+	<meta property="og:site_name" content="정수기 임대, 매매">
+<!--    <link rel="stylesheet" href="normalize.css">-->
+    <link rel="stylesheet" href="font.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR" rel="stylesheet">
+    <!--[if lt ie 9]>
+        <script src="html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="reset.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109283150-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109283150-1');
+    </script>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub_common.css">
+    <style>    
+    .frm { clear:both; width: 500px; margin: 0 auto; } 
+    .frm fieldset { border:1px solid #ececec; padding-top: 20px; padding-bottom: 20px; }    
+    .indata { display:block; width: 400px; height: 36px; 
+        line-height: 36px; margin: 0 auto; outline:0; border:1px solid #333; color:#333; text-indent:10px; font-size:18px; }    
+    .indata:hover { border:1px solid deepskyblue; } 
+    .btn_fr { width: 400px; margin: 0 auto; }    
+    .frm_btn { display:block; width: 155px; line-height: 36px; 
+        height: 36px; text-align:center; float:left; margin-left: 30px; border:0; outline:0; background-color: deepskyblue; color:#fff; font-size:16px;  }
+    .find_fr { clear:both; width: 400px; margin: 0 auto; height: 48px; line-height: 48px; }
+    .find_fr a { padding-left: 30px; color:deeppink; }    
+    .ck_fr { width:370px; margin: 0 auto; padding-left: 30px; 
+        line-height: 52px; }
+    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <header class="hd">
+        <div class="hd_wrap">
+            <nav class="tnb">
+                <ul>
+                    <li><a href="login.html">
+                        <img src="./images/login.png" alt="로그인">
+                    </a></li>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="mypage.html">마이페이지</a></li>
+                    <li><a href="map.html">오시는길</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hd_wrap">
+           <div class="menu_fr">
+                <a href="index.html" class="logo">
+                    <img src="./images/logo.png" alt="넬로숍로고">
+                </a>
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="intro.html">홍보 영상</a></li>
+                        <li><a href="product.html">제품 소개</a></li>
+                        <li><a href="sales.html">제품 구매</a></li>
+                        <li><a href="brand.html">브랜드 스토리</a></li>
+                        <li><a href="qna.html">질문 및 답변</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <figure class="vs">
+            <img src="http://placehold.it/1920x280/333" alt="서브비주얼배너">
+        </figure>
+        <div class="bread">
+            <p class="crumb"><a href="" class="home">HOME</a> &gt; <span class="cur_txt">회원가입</span></p>
+        </div>
+        <div class="con">
+            <aside class="leftbar">
+                <nav class="lnb">
+                    <h2 class="lnb_tit">회원관리</h2>
+                    <ul class="menu">
+                        <li><a href="login.html">
+                            로그인
+                        </a></li>
+                        <li><a href="join.html" class="cur">회원가입</a></li>
+                        <li><a href="mypage.html">마이페이지</a></li>
+                        <li><a href="">회원 탈퇴</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <article class="real">
+                <section class="page" id="page1">
+                    <h2 class="page_tit">회원가입</h2>
+                    <div class="page_wrap">
+                        <form action="" method="" name="join_form" id="join_form" class="frm">
+                            <fieldset>
+                                <input type="text" id="m_id" name="m_id" placeholder="ID 입력" class="indata" autofocus required><br>
+                                <input type="password" id="m_pw" name="m_pw" placeholder="PW 입력" class="indata" required><br>
+                                <input type="password" id="m_pw2" name="m_pw2" placeholder="PW 확인 입력" class="indata" required><br>
+                                <input type="text" id="m_name" name="m_pw2" placeholder="이름 입력" class="indata" required><br>
+                                <input type="text" id="m_email" name="m_email" class="indata" placeholder="e-mail 입력" required><br>
+                                <input type="text" id="m_tel" name="m_tel" class="indata" placeholder="전화번호 입력" required><br>
+                                <div class="btn_fr">
+                                    <input type="submit" class="frm_btn" value="회원가입">
+                                    <input type="reset" class="frm_btn" value="취소">
+                                </div> 
+                            </fieldset>   
+                        </form>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </div>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_col1">
+                <nav class="ft_link">
+                    <ul>
+                        <li><a href="company.html#page1">회사소개</a></li>
+                        <li><a href="company.html#page2">이용안내</a></li>
+                        <li><a href="company.html#page3">개인정보처리방침</a></li>
+                        <li><a href="company.html#page4">이용약관</a></li>
+                    </ul>
+                </nav>
+                <p class="addr">
+                    회사명 : 쿠쿠전자(주)  대표이사 : 구본학  개인정보관리책임자 : 온라인유통팀 임현석<br>
+                    본사 : 경상남도 양산시 유산공단2길 14  E-mail : webmaster@cuckoo.co.kr<br>
+                    사업자등록번호 : 337-87-00918 [사업자 정보확인]  통신판매신고번호:제2017-경남양산-00367호
+                </p>
+                <p class="copyright">COPYRIGHT (C) CUCKOO ELECTRONICS. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="ft_col2">
+                <p>
+                    <span class="ft_tit1">상담신청</span><br>
+                    <span class="ft_tit2">02-2017-6047</span><br>
+                </p>
+                <p class="ft_time">업무시간 AM 09:00~PM 18:00 | 점심시간 PM 12:00 ~ PM 13:00<br>
+                (주말 및 공휴일 휴무)</p>
+            </div>
+            <div class="ft_col3">
+                <img src="./images/footer_logo2.png" alt="푸터로고">
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

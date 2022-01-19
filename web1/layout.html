@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃</title>
+    <link rel="stylesheet" href="font.css">
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; font-family: 'nsL', sans-serif; }    
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    
+    .wrap { width: 100%; }    
+    .hd { clear:both; width: 100%; height: 120px;  }        
+    .hd_wrap { clear:both; width: 100%; height: 40px; border-bottom:1px solid #bbb; }  
+    .tnb { width: 1400px; margin: 0 auto; height: 39px;  } 
+    .menu { float:right; } 
+    .menu li { float:left; padding-top: 8px; padding-left: 40px; } 
+    .menu li a { color:#333; font-size:13px; }  
+        
+    .hd_wrap2 { clear:both; width: 1400px; margin: 0 auto; } 
+    .logo { display:block; float:left; margin-top: 10px; } 
+    .gnb { float:right; } 
+    .gnb li { float:left; padding-top:15px;
+        text-align:center; padding-bottom: 15px; }    
+    .gnb li a {  color:#333; padding-left: 60px; font-size:18px; 
+            font-family: 'nsEB', sans-serif; } 
+    
+    .content { clear:both; width: 100%; }    
+    .row1 { clear:both; width: 100%; } 
+    .vs1 { clear:both; width: 100%; }
+    .vs1 img { display:block; width: 100%; height: auto; } 
+        
+    .row2 { clear:both; width: 100%; padding-top: 50px; }
+    .vs2 { width: 1200px; margin: 0 auto; }
+    .vs2 img { display:block; width: 100%; }    
+        
+    .row3 { clear:both; width: 100%; padding-top: 50px; }
+    .img_box3 { width: 1350px; margin: 0 auto; }
+    .img_box3 li { width: 600px; float:left; margin-left: 50px; }
+    .img_box3 li img { display:block; width: 100%; height: auto; } 
+        
+    .row4 { clear:both; width: 100%; padding-top: 50px; }
+    .img_box4 { width: 1360px; margin: 0 auto; }
+    .img_box4 li { width: 400px; float:left; margin-left: 40px; }
+    .img_box4 li img { display:block; width: 100%; height: auto; }
+        
+    .row5 { clear:both; width: 100%; padding-top: 50px; }
+    .img_box5 { width: 1350px; margin: 0 auto; }
+    .img_box5 li { width: 300px; float:left; margin-left: 30px; } 
+    .img_box5 li img { display:block; width: 100%; height: auto; }    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="menu">
+                        <li><a href="">상단1</a></li>
+                        <li><a href="">상단2</a></li>
+                        <li><a href="">상단3</a></li>
+                    </ul>
+                </nav>
+            </div>       
+            <div class="hd_wrap2">
+                <a href="" class="logo">
+                    <img src="http://placehold.it/100x50/333" alt="logo">
+                </a>
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="">메인1</a></li>
+                        <li><a href="">메인메뉴2</a></li>
+                        <li><a href="">메인메뉴이다3</a></li>
+                        <li><a href="">메인메뉴이며, 사이트의 네 번째</a></li>
+                        <li><a href="">메인메뉴5</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            <div class="row1">
+                <figure class="vs1"><img src="http://placehold.it/1200x300" alt="배너"></figure>
+            </div>
+            <div class="row2">
+                <figure class="vs2"><img src="http://placehold.it/1200x300/369" alt="배너"></figure>
+            </div>
+            <div class="row3">
+                <ul class="img_box3">
+                    <li><img src="http://placehold.it/600x300/639" alt="배너1"></li>
+                    <li><img src="http://placehold.it/600x300/936" alt="배너2"></li>
+                </ul>
+            </div>
+            <div class="row4">
+                <ul class="img_box4">
+                    <li><img src="http://placehold.it/400x300/2c8" alt=""></li>
+                    <li><img src="http://placehold.it/400x300/2c8" alt=""></li>
+                    <li><img src="http://placehold.it/400x300/2c8" alt=""></li>
+                </ul>
+            </div>
+            <div class="row5">
+                <ul class="img_box5">
+                    <li><img src="http://placehold.it/300x300/c28" alt=""></li>
+                    <li><img src="http://placehold.it/300x300/c28" alt=""></li>
+                    <li><img src="http://placehold.it/300x300/c28" alt=""></li>
+                    <li><img src="http://placehold.it/300x300/c28" alt=""></li>
+                </ul>
+            </div>
+            
+            
+        </div>
+        
+        
+    </div>
+</body>
+</html>

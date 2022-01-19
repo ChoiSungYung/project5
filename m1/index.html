@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="title" content="알뜰폰 모바일 웹앱">
+    <meta name="keywords" content="U+, 알뜰폰, 유플러스, 모바일, 유알모">
+    <meta name="auther" content="kim">
+    <meta name="description" content="알뜰폰 구입이 수월하고, 가격은 저렴, 서비스는 최대, 가성비 갑">
+    <title>알뜰폰 모바일 웹사이트</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script></script>
+    <link rel="stylesheet" href="https://github.com/necolas/normalize.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .wrap { width:100%;  height:100%;  }
+    .hd { width:100%; height:40%; 
+        background: #ff2d76; 
+        background: -moz-linear-gradient(-45deg, #ff2d76 0%, #f69465 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #ff2d76 0%,#f69465 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #ff2d76 0%,#f69465 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2d76', endColorstr='#f69465',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ }
+    .logo { display:block; width: 156px; height: 25px; 
+        float:left; margin-left:10px; margin-top:10px;
+        background-image:url("./img/mobile_logo_w.png"); 
+        background-repeat:no-repeat;
+        background-size:100% auto; 
+        background-position:center center;
+    }
+    .top_btn { float:right; margin-top:10px; margin-right:10px; }
+    .top_btn li { float:left; }
+    .top_btn li label { display:block; width:25px; height:25px; 
+    background-repeat:no-repeat; background-position:center center; 
+    text-indent:-9999px; }
+    .top_btn li.search label { background-image:url("./img/search_btn.png"); }
+    .top_btn li.menu label { background-image:url("./img/lst_btn.png");
+        width:32px;  }
+    .close { display:block; width: 28px; height: 28px; 
+    background-image:url("./img/btn_close_b.png"); 
+    background-size:cover; }
+    .ck_item { display:none; }
+    #find_nav { position:fixed; left:-110%; top:0; z-index:99;
+    width:100%; height:100vh; background-color:#fff; transition:0.5s; } 
+    #ck1:checked ~ #find_nav { left:0; }
+    #gnb { position:fixed; right:-110%; top: 0; z-index:99; padding-top:20px; 
+    width: 100%; height: 100vh; background-color:#fff; transition:0.5s;} 
+    #ck2:checked ~ #gnb { right:0; }
+    
+    .frm1 { clear:both; padding-top:1.6em; width:250px; margin:0 auto; }
+    .frm1 input { display:block; float:left; }
+    .in_data { width:200px; line-height:32px; border-radius:20px;
+    border:1px solid rgb(105, 104, 104);  text-indent:1em;  }
+    .frm_btn { width: 32px; height:32px; background-color:#333;
+        background-image:url("./img/search_btn.png");
+        background-position:center center;
+        background-repeat:no-repeat;  margin-left: 10px; 
+        text-indent:-9999px; 
+        border-radius:20px;
+    }
+    .hash_title { clear:both; text-align: center; line-height:4; }
+    .hash { clear:both; padding:20px; }
+    .hash li { line-height:2.4; padding-left: 20px; }
+    .hash li a { color:#333; }
+    #find_nav .close { float:right; margin-top:20px; margin-right:20px; }
+
+    #gnb li { clear:both; line-height:2; padding-left:25px; }
+    #gnb li a { display:block; color:#333; position:relative; }
+    .sub { width:100%; height:0; overflow:hidden; transition:0.5s; }
+    .sub.on { height:125px; }
+    #gnb li a.dp1:after { content:"▼"; position:absolute; right:50px; top: 5px; } 
+    #gnb li a.dp1.on:after { content:"▲"; } 
+    #gnb:before { content:"MENU"; display:block; clear:both;
+    width: 100%; line-height:80px; font-size:2em; text-align:center;
+border-bottom:3px solid #eee; }
+    #gnb .close { position:absolute; right:20px; top:20px; }
+
+    .ft { clear:both; height:100px; background:#333; color:#fff; 
+    font-size:0.7em; text-align:center; line-height:1.4; padding-bottom: 10px; font-weight:200; position:absolute; bottom:0; left:0; 
+    width: 100%; padding-top: 20px; }
+    .ft_wrap { width:280px; margin:0 auto; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("#gnb a.dp1").click(function(){
+            $(".sub").removeClass("on");
+            $(this).next(".sub").addClass("on");
+            $("#gnb a.dp1").removeClass("on");
+            $(this).addClass("on");
+        });
+        var wd = parseInt($(".vs").width());
+        $(".btn_box li").click(function(){
+            var idx = $(this).index();
+            $(".img_box").not(":animated").animate({"margin-left" : wd*idx*-1+"px"}, 600);
+            $(".btn_box li").removeClass("on");
+            $(this).addClass("on");
+        });
+    });    
+    </script>
+    <style>
+    body, html { width:100%; height:100%; overflow:hidden; 
+    background-image:url("./img/pat1.png");
+    background-repeat:repeat; }    
+    .vs { position:absolute; width:90%; left:5%; top:50px; 
+    max-height:45%; overflow:hidden; z-index:1; }
+    .img_box { width:500%; height:auto; }
+    .img_box li { width:20%; height:auto; float:left; }
+    .img_box li a { display:block; width:100%; }
+    .img_box li img { display:block; width:100%; height:auto; }
+    .btn_box { position:absolute; bottom:10px; width:100px; 
+    left:calc(50% - 50px); }
+    .btn_box li { width:20px; height:20px; float:left; }
+    .btn_box li button { display:block; width:10px; height:10px; 
+    border-radius:6px; background:#333; }
+    .btn_box li.on button { background:#ff2d76; }
+
+    .shortcut { width:198px; margin:50px auto; margin-top:4.9em;
+    border-right:1px solid #ccc; border-bottom:1px solid #ccc; 
+    height:117px; }
+    .shortcut li { float:left; width:65px; border-left:1px solid #ccc;
+    border-top:1px solid #ccc; height:58px; }
+    .shortcut li a { display:block; }
+    .shortcut li span { display:block; }
+    .shortcut li span[class*=ico] { background-repeat:no-repeat;
+    background-image:url("./img/split1.png"); width:64px; height:38px; }
+    .shortcut li span.ico1 { background-position:5px 0px; }
+    .shortcut li span.ico2 { background-position:-107px -48px; }
+    .shortcut li span.ico3 { background-position:-160px 0px; }
+    .shortcut li span.ico4 { background-position:-50px -98px; }
+    .shortcut li span.ico5 { background-position:-104px -98px; }
+    .shortcut li span.ico6 { background-position:-102px 0px; }
+    .shortcut li span.txt { color:#333; font-size:0.85em; text-align:center; }
+    </style>
+</head>
+<body>
+<!-- div.wrap>header.hd+figure.vs+nav.shortcut+footer.ft -->
+<div class="wrap">
+    <header class="hd">
+        <a href="index.html" class="logo" title="logo"></a>
+        <input type="checkbox" class="ck_item" id="ck1">
+        <input type="checkbox" class="ck_item" id="ck2">
+        <nav class="top_btn">
+            <ul>
+                <li class="search">
+                    <label for="ck1">검색</label>
+                </li>
+                <li class="menu">
+                    <label for="ck2">메뉴</label>
+                </li>
+            </ul>    
+        </nav>
+        <nav id="find_nav">
+            <form action="" class="frm1">
+                <input type="text" id="keyword" class="in_data" placeholder="검색어 입력">
+                <input type="submit" value="검색" class="frm_btn">
+            </form>
+            <p class="hash_title">아래의 자주 사용하는 메뉴 링크를 이용하세요</p>
+            <ul class="hash">
+                <li class="item1"><a href="sub1.html">해시메뉴1</a></li>
+                <li class="item2"><a href="sub2.html">해시메뉴2</a></li>
+                <li class="item3"><a href="sub3.html">해시메뉴3</a></li>
+                <li class="item4"><a href="sub4.html">해시메뉴4</a></li>
+                <li class="item5"><a href="sub5.html">해시메뉴5</a></li>
+            </ul>
+            <label for="ck1" class="close"></label>  
+        </nav>
+        <nav id="gnb">
+            <ul class="nav">
+                <li class="item1">
+                    <a class="dp1">메뉴1</a>
+                    <ul class="sub">
+                        <li class="it1"><a href="">서브메뉴11</a></li>
+                        <li class="it2"><a href="">서브메뉴12</a></li>
+                        <li class="it3"><a href="">서브메뉴13</a></li>
+                        <li class="it4"><a href="">서브메뉴14</a></li>
+                        <li class="it5"><a href="">서브메뉴15</a></li>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a class="dp1">메뉴2</a>
+                    <ul class="sub">
+                        <li class="it1"><a href="">서브메뉴21</a></li>
+                        <li class="it2"><a href="">서브메뉴22</a></li>
+                        <li class="it3"><a href="">서브메뉴23</a></li>
+                        <li class="it4"><a href="">서브메뉴24</a></li>
+                        <li class="it5"><a href="">서브메뉴25</a></li>
+                    </ul>
+                </li>
+                <li class="item3">
+                    <a class="dp1">메뉴3</a>
+                    <ul class="sub">
+                        <li class="it1"><a href="">서브메뉴31</a></li>
+                        <li class="it2"><a href="">서브메뉴32</a></li>
+                        <li class="it3"><a href="">서브메뉴33</a></li>
+                        <li class="it4"><a href="">서브메뉴34</a></li>
+                        <li class="it5"><a href="">서브메뉴35</a></li>
+                    </ul>
+                </li>
+                <li class="item4">
+                    <a class="dp1">메뉴4</a>
+                    <ul class="sub">
+                        <li class="it1"><a href="">서브메뉴41</a></li>
+                        <li class="it2"><a href="">서브메뉴42</a></li>
+                        <li class="it3"><a href="">서브메뉴43</a></li>
+                        <li class="it4"><a href="">서브메뉴44</a></li>
+                        <li class="it5"><a href="">서브메뉴45</a></li>
+                    </ul>
+                </li>
+                <li class="item5">
+                    <a class="dp1">메뉴5</a>
+                    <ul class="sub">
+                        <li class="it1"><a href="">서브메뉴51</a></li>
+                        <li class="it2"><a href="">서브메뉴52</a></li>
+                        <li class="it3"><a href="">서브메뉴53</a></li>
+                        <li class="it4"><a href="">서브메뉴54</a></li>
+                        <li class="it5"><a href="">서브메뉴55</a></li>
+                    </ul>
+                </li>
+                <li class="item6">
+                    <a class="dp1">메뉴6</a>
+                    <ul class="sub">
+                        <li class="it1"><a href="">서브메뉴61</a></li>
+                        <li class="it2"><a href="">서브메뉴62</a></li>
+                        <li class="it3"><a href="">서브메뉴63</a></li>
+                        <li class="it4"><a href="">서브메뉴64</a></li>
+                        <li class="it5"><a href="">서브메뉴65</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <label for="ck2" class="close"></label>  
+        </nav>
+    </header>
+    <figure class="vs">
+        <ul class="img_box">
+            <li class="item1">
+                <a href="">
+                    <img src="./img/vs1.jpg" alt="데이터+통화무제한">
+                    <h2 class="vs_tit"></h2>
+                </a>
+            </li>
+            <li class="item2">
+                <a href="">
+                    <img src="./img/vs2.jpg" alt="파격가GS25">
+                    <h2 class="vs_tit"></h2>
+                </a>
+            </li>
+            <li class="item3">
+                <a href="">
+                    <img src="./img/vs3.jpg" alt="LGQ9">
+                    <h2 class="vs_tit"></h2>
+                </a>
+            </li>
+            <li class="item4">
+                <a href="">
+                    <img src="./img/vs4.jpg" alt="갤럭시S8">
+                    <h2 class="vs_tit"></h2>
+                </a>
+            </li>
+            <li class="item5">
+                <a href="">
+                    <img src="./img/vs5.jpg" alt="10GB극한최저가">
+                    <h2 class="vs_tit"></h2>
+                </a>
+            </li>
+        </ul>
+        <ul class="btn_box">
+            <li class="item1 on"><button></button></li>
+            <li class="item2"><button></button></li>
+            <li class="item3"><button></button></li>
+            <li class="item4"><button></button></li>
+            <li class="item5"><button></button></li>
+        </ul>
+    </figure>
+    <nav class="shortcut">
+        <ul>
+            <li class="item1">
+                <a href="list.html" rel="external">
+                    <span class="ico1"></span>
+                    <span class="txt">목록</span>
+                </a>
+            </li>
+            <li class="item2">
+                <a href="search.html" rel="external">
+                    <span class="ico2"></span>
+                    <span class="txt">검색</span>
+                </a>
+            </li>
+            <li class="item3">
+                <a href="tel:042-478-2111">
+                    <span class="ico3"></span>
+                    <span class="txt">전화</span>
+                </a>
+            </li>
+            <li class="item4">
+                <a href="sms:010-1004-1004">
+                    <span class="ico4"></span>
+                    <span class="txt">문자</span>
+                </a>
+            </li>
+            <li class="item5">
+                <a href="mailto:ksb450424@naver.com">
+                    <span class="ico5"></span>
+                    <span class="txt">이메일</span>
+                </a>
+            </li>
+            <li class="item6">
+                <a href="memo.html" rel="external">
+                    <span class="ico6"></span>
+                    <span class="txt">글쓰기</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <p class="copyright">
+                (주)미디어로그 주소 : 서울특별시 마포구 월드컵북로 416 (상암동) LG 유플러스<br>
+                대표이사 : 이용재 &nbsp;&nbsp; 사업자 등록번호 : 114-81-96221 <br>
+                통신판매신고 번호 : 제 2012-서울마포-0954호 <br>
+            </p>
+            <br>
+            <address class="copy">COPYRIGHT © MEDIALOG CORP.  ALL RIGHTS RESERVED.</address>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

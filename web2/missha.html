@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 메타 정보 -->
+    <title>미샤 브랜드 소개(Missha Brand Intro)</title>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="robots" content="All">
+	<meta name="title" content="미샤 효과로 말하다 │ 미샤 공식 웹사이트">
+	<meta name="description" content="효능 중심의 원료와 고도화된 맞춤 흡수기술, 천 만 고객의 니즈와 데이터를 기반으로 한 미샤의 브랜드 스토리와 제품을 만나보세요.">
+	<meta name="keywords" content="브랜드스토리, 베스트&신상품, 스킨케어, 메이크업, #MISSHA">
+   
+    <!-- 바로가기 아이콘 -->
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    
+    <!-- 오픈그래프 -->
+	<meta property='og:title' content="미샤 효과로 말하다 │ 미샤 공식 웹사이트">
+	<meta property='og:description' content="효능 중심의 원료와 고도화된 맞춤 흡수기술, 천 만 고객의 니즈와 데이터를 기반으로 한 미샤의 브랜드 스토리와 제품을 만나보세요.">
+	<meta property='og:url' content="">
+	<meta property='og:image' content="./img/sitethumb.jpg">
+
+    <!-- 폰트 파일 임포트(link 태그) -->
+    <link rel="stylesheet" href="font.css">
+    
+    <!-- html5shiv.js 연결 -->
+    <!--[if lt ie 9]>
+        <script src="./js/html5shiv.js"></script>
+    <![endif]-->
+    
+    <!-- 스타일 초기화 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    
+    <!-- jQuery 연결 -->
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    
+    <!-- 구글 애널리틱스 연결 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109283150-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109283150-1');
+    </script>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub_common.css">
+    
+    <style>
+    
+    .cate_tit1 { font-size:48px; padding-top: 0; line-height: 1.8;
+        font-weight:300; } 
+    .cate_tit2 { font-size:32px; padding-top: 0; line-height: 1.6; 
+        font-weight: 300; }  
+    .bold_tit { font-weight: 600; } 
+    .center_tit { text-align: center; padding-top: 100px; }    
+    .cate_com { padding-top: 25px; font-size:18px; line-height:2; }    
+    .sub_img { clear:both; position:relative; width: 100%; 
+    }
+    .sub_img .pic { display:block; width: 100%; }    
+    .w1440_fr { width: 1600px; position:absolute; top: 0; left: 50%; 
+        margin-left: -720px; }    
+    .cate_tit_box { width: 50%; float:right; padding-top:150px; } 
+      
+
+    .lst1 { width: 1140px; margin: 0 auto; position:relative; }
+    .lst1 li { clear:both; min-height:500px; width: 100%; position:relative; }    
+    .tit_box { position:absolute; top: 50px; padding-top:90px; }
+    .tit_box.right_item { right:0; } 
+    .tit_box .cate_head_fr { float:left; padding: 15px; }
+    .tit_box .cate_head_fr .cate_tit2:after { content:""; width:220px; 
+        height: 40px; display:block; float:right; border-bottom:2px solid #000; }
+    .tit_box .cate_com { float:left; padding: 15px; }    
+    .tit_box.left_item { left:0; }     
+    .lst1 li .img2 { display:block; float:right; } 
+        
+    .lst2 { width: 1440px; margin: 0 auto; }
+    .lst2 li { float:left; }
+    .lst2 li.col1 { width: 120px; }    
+    .lst2 li.col2 { width: 240px; }    
+    .lst2 li.col3 { width: 360px; }    
+    .lst2 li.col4 { width: 480px; }    
+    .lst2 li.col6 { width: 720px; }
+    .lst2 li.col8 { width: 960px; }    
+    .lst2 li.col12 { width: 1440px; }    
+    .lst2 li .circle_box { width: 400px; height: 400px;  margin: 0 auto;    border:1px solid #ccc; border-radius:210px; text-align:center; }  
+    .circle_tit { padding-top:100px; line-height:1.3; font-size:34px;   } .circle_com { padding-top: 20px; }  
+    .pic_box { clear:both; width: 1440px; margin: 0 auto; padding-top: 100px; }
+    .pic_box .pic2 { display:block; width: 100%; }    
+    .lst2 .pic { display:block; width: 400px; margin:10px auto; }  
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="ck1" class="ck">
+        <input type="checkbox" id="ck2" class="ck">
+        <nav id="all_menu">
+            <ul class="menu_fr">
+                <li class="cate">
+                    <h2 class="cate_tit">MISSHA</h2>
+                    <ul class="dp2">
+                        <li><a href="missha.html">Brand Story</a></li>
+                        <li><a href="missha.html#page1">MISSHA Technology</a></li>
+                        <li><a href="missha.html#page2">MISSHA Film</a></li>
+                        <li><a href="missha.html#page3">X MISSHA</a></li>
+                    </ul>
+                    <h2 class="cate_tit">베스트&amp;신상품</h2>
+                    <ul class="dp2">
+                        <li><a href="best.html">Best&amp;New</a></li>
+                        <li><a href="">Award</a></li>
+                    </ul>
+                </li>
+                <li class="cate">
+                    <h2 class="cate_tit">스킨케어</h2>
+                    <ul class="dp2">
+                        <li class="dp2_tit">유형별</li>
+                        <li><a href="skincare.html">전체보기</a></li>
+                        <li><a href="skincare.html#page1">스킨/토너</a></li>
+                        <li><a href="skincare.html#page2">로션/에멀전</a></li>
+                        <li><a href="skincare.html#page3">에센스/세럼</a></li>
+                        <li><a href="">앰플</a></li>
+                        <li><a href="">크림</a></li>
+                        <li><a href="">아이케어</a></li>
+                        <li><a href="">오일</a></li>
+                        <li><a href="">팩</a></li>
+                        <li><a href="">선케어</a></li>
+                        <li><a href="">클렌징</a></li>
+                        <li><a href="">남성</a></li>
+                    </ul>
+                </li>
+                <li class="cate">
+                    <h2 class="cate_tit none_tit">스킨케어</h2>
+                    <ul class="dp2">
+                        <li class="dp2_tit">라인별</li>
+                        <li><a href="">전체보기</a></li>
+                        <li><a href="">스킨/토너</a></li>
+                        <li><a href="">로션/에멀전</a></li>
+                        <li><a href="">에센스/세럼</a></li>
+                        <li><a href="">앰플</a></li>
+                        <li><a href="">크림</a></li>
+                    </ul>
+                    <ul class="dp2">
+                        <li class="dp2_tit">고민별</li>   
+                        <li><a href="">아이케어</a></li>
+                        <li><a href="">오일</a></li>
+                        <li><a href="">팩</a></li>
+                        <li><a href="">선케어</a></li>
+                        <li><a href="">클렌징</a></li>
+                        <li><a href="">남성</a></li>
+                    </ul>
+                </li>
+                <li class="cate">
+                    <h2 class="cate_tit">메이크업</h2>
+                    <ul class="dp2">
+                        <li class="dp2_tit">페이스</li>
+                        <li><a href="makeup.html">전체보기</a></li>
+                        <li><a href="makeup.html#page1">스킨/토너</a></li>
+                        <li><a href="makeup.html#page2">로션/에멀전</a></li>
+                        <li><a href="makeup.html#page4">에센스/세럼</a></li>
+                        <li><a href="">앰플</a></li>
+                        <li><a href="">크림</a></li>
+                    </ul>
+                    <ul class="dp2">
+                        <li class="dp2_tit">립</li>   
+                        <li><a href="">아이케어</a></li>
+                        <li><a href="">오일</a></li>
+                        <li><a href="">팩</a></li>
+                        <li><a href="">선케어</a></li>
+                        <li><a href="">클렌징</a></li>
+                        <li><a href="">남성</a></li>
+                    </ul>
+                </li>
+                <li class="cate">
+                    <h2 class="cate_tit">헤어&amp;바디</h2>
+                    <ul class="dp2">
+                        <li><a href="hair.html">헤어</a></li>
+                        <li><a href="">바디</a></li>
+                        <li><a href="">네일</a></li>
+                    </ul>
+                    <h2 class="cate_tit"><a href="index.html">#MISSHA</a></h2>
+                    <h2 class="cate_tit">이벤트</h2>
+                    <ul class="dp2">
+                        <li><a href="event.html">진행중 이벤트</a></li>
+                        <li><a href="">지난 이벤트</a></li>
+                        <li><a href="">당첨자 발표</a></li>
+                    </ul>
+                </li>                
+            </ul>
+        </nav>
+        <div id="search_form">
+            <form action="" class="search_fr">
+                <fieldset>
+                    <input type="text" id="keywords" placeholder="타임 레볼루션">
+                    <input type="submit" id="search_btn">
+                </fieldset>
+                <div class="hash_fr">
+                    <h3 class="hash_tit">인기 검색어</h3>
+                    <a href="">클렌징젤</a>
+                    <a href="">타임 레볼루션</a>
+                    <a href="">Safe block rx</a>
+                    <a href="">클렌징로션</a>
+                    <a href="">로라</a>
+                    <a href="">더퍼스트</a>
+                    <a href="">hair removal</a>
+                    <a href="">vita</a>
+                    <a href="">타임레볼루션 더퍼스트에센스 5X</a>
+                    <a href="">5세대</a>
+                </div>
+            </form>
+        </div>
+        <header class="hd">
+            <div class="hd_wrap">
+                <ul class="top1">
+                    <li>
+                        <label for="ck1" class="menu_call_btn">
+                            <span class="bar1"></span>
+                            <span class="bar2"></span>
+                            <span class="bar3"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <a href="map.html">
+                            <img src="./img/icon_location.png" alt="오시는길">
+                        </a>
+                    </li>
+                    <li>
+                        <label for="ck2" class="search_call_btn">
+                        검색
+                        </label>
+                    </li>
+                </ul>
+                <a href="" class="logo">로고</a>
+                <div class="lang">
+                    <a href="index.html" class="cur_lang">KR</a>
+                    <a href="index_en.html">EN</a>
+                </div>
+            </div>
+            <nav class="gnb" id="gnb">
+                <ul>
+                    <li>
+                        <a href="index.html" class="dp1">MISSHA</a>
+                    </li>
+                    <li>
+                        <a href="best.html" class="dp1">베스트&amp;신상품</a>
+                        <div class="sub item2">
+                            <ul>
+                                <li><a href="best.html" class="dp2">Best&amp;New</a></li>
+                                <li><a href="" class="dp2">Awards</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="skincare.html" class="dp1">스킨케어</a>
+                        <div class="sub item3">
+                            <ul>
+                                <li class="menu_tit">유형별</li>
+                                <li><a href="skincare.html" class="dp2">전체보기</a></li>
+                                <li><a href="" class="dp2">스킨/토너</a></li>
+                                <li><a href="" class="dp2">로션/에멀전</a></li>
+                                <li><a href="" class="dp2">에센스/세럼</a></li>
+                                <li><a href="" class="dp2">앰플</a></li>
+                                <li><a href="" class="dp2">크림</a></li>
+                                <li><a href="" class="dp2">아이케어</a></li>
+                            </ul>
+                            <ul>
+                                <li class="menu_tit">라인별</li>
+                                <li><a href="" class="dp2">전체보기</a></li>
+                                <li><a href="" class="dp2">타임레볼루션</a></li>
+                                <li><a href="" class="dp2">개똥쑥</a></li>
+                                <li><a href="" class="dp2">비타씨플러스</a></li>
+                                <li><a href="" class="dp2">수퍼아쿠아</a></li>
+                                <li><a href="" class="dp2">비폴렌</a></li>
+                                <li><a href="" class="dp2">초공진</a></li>
+                            </ul>
+                            <ul>
+                                <li class="menu_tit">고민별</li>
+                                <li><a href="" class="dp2">전체보기</a></li>
+                                <li><a href="" class="dp2">수분케어</a></li>
+                                <li><a href="" class="dp2">잡티/미백케어</a></li>
+                                <li><a href="" class="dp2">탄력케어</a></li>
+                                <li><a href="" class="dp2">안티에이징</a></li>
+                                <li><a href="" class="dp2">진정</a></li>
+                                <li><a href="" class="dp2">트러블케어</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="makeup.html" class="dp1">메이크업</a>
+                        <div class="sub item4">
+                            <ul>
+                                <li class="menu_tit">페이스</li>
+                                <li><a href="makeup.html" class="dp2">전체보기</a></li>
+                                <li><a href="makeup.html#page1" class="dp2">파운데이션/컨실러</a></li>
+                                <li><a href="makeup.html#page2" class="dp2">쿠션/텐션</a></li>
+                                <li><a href="makeup.html#page3" class="dp2">비비크림</a></li>
+                                <li><a href="" class="dp2">프라이머/베이스</a></li>
+                                <li><a href="" class="dp2">파우더/팩트/픽서</a></li>
+                                <li><a href="" class="dp2">블러셔/하이라이터/컨투어</a></li>
+                                <li><a href="" class="dp2">브러쉬/퍼프</a></li>
+                            </ul>
+                            <ul>
+                                <li class="menu_tit">립</li>
+                                <li><a href="" class="dp2">전체보기</a></li>
+                                <li><a href="" class="dp2">립스틱</a></li>
+                                <li><a href="" class="dp2">립틴트/립글로스</a></li>
+                                <li><a href="" class="dp2">립밤</a></li>
+                                <li><a href="" class="dp2">립라이너/펜슬</a></li>
+                            </ul>
+                            <ul>
+                                <li class="menu_tit">아이</li>
+                                <li><a href="" class="dp2">전체보기</a></li>
+                                <li><a href="" class="dp2">아이섀도우</a></li>
+                                <li><a href="" class="dp2">아이브로우</a></li>
+                                <li><a href="" class="dp2">아이라이너</a></li>
+                                <li><a href="" class="dp2">마스카라</a></li>
+                                <li><a href="" class="dp2">리무버</a></li>
+                                <li><a href="" class="dp2">소도구</a></li>
+                            </ul>
+                            <ul>
+                                <li class="menu_tit">라인별</li>
+                                <li><a href="" class="dp2">전체보기</a></li>
+                                <li><a href="" class="dp2">글로우</a></li>
+                                <li><a href="" class="dp2">M</a></li>
+                                <li><a href="" class="dp2">울트라파워프루프</a></li>
+                                <li><a href="" class="dp2">이탈프리즘</a></li>
+                                <li><a href="" class="dp2">데어</a></li>
+                            </ul>                            
+                        </div>
+                    </li>
+                    <li>
+                        <a href="hair.html" class="dp1">헤어&amp;바디</a>
+                        <div class="sub item5">
+                            <ul>
+                                <li><a href="hair.html" class="dp2">헤어</a></li>
+                                <li><a href="" class="dp2">바디</a></li>
+                                <li><a href="" class="dp2">네일</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="index.html" class="dp1">#MISSHA</a>
+                    </li>
+                    <li>
+                        <a href="event.html" class="dp1">이벤트</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <figure class="vs" id="vs">
+                <img src="./img/nav_story.png" alt="미샤">   
+            </figure>
+            <div class="bread">
+                <ul class="bread_fr">
+                    <li class="home"><a href="">HOME</a></li>
+                    <li>
+                        <ul class="bread_sel1">
+                            <li>
+                                <span class="cur">MISSHA</span>
+                            </li>
+                            <li><a href="skincare.html">스킨케어</a></li>
+                            <li><a href="makeup.html">메이크업</a></li>
+                            <li><a href="hair.html">헤어&amp;바디</a></li>
+                            <li><a href="event.html">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="bread_sel2">
+                            <li><span class="cur">Brand Story</span></li>
+                            <li><a href="missha.html#page1">MISSHA Technology</a></li>
+                            <li><a href="missha.html#page2">MISSHA Film</a></li>
+                            <li><a href="missha.html#page3">X MISSHA</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <script>
+                $(document).ready(function(){
+                    $(".bread_sel1 .cur").click(function(){
+                        $(".bread_sel1").toggleClass("on");
+                    });
+                    $(".bread_sel2 .cur").click(function(){
+                        $(".bread_sel2").toggleClass("on");
+                    });
+                    $(".bread_sel2 li a").click(function(){
+                        $(".bread_sel2").removeClass("on");
+                    });
+                });    
+                </script>
+            </div>
+            <!-- 여기서 부터 모든 서브가 달라짐 -->
+            <section class="page" id="brand_story">
+                <figure class="sub_img">
+                    <img src="./img/missha_bg1.jpg" class="pic" alt="미샤 브랜드 이미지">
+                    <div class="w1440_fr">
+                        <div class="cate_tit_box">
+                            <h2 class="cate_tit1 bold_tit">BRAND STORY</h2>
+                            <h3 class="cate_tit2">미샤, 효과로 말하다</h3>
+                            <p class="cate_com">우리는 20여년의 놀라운 여정을 지나 왔습니다.<br> 고객의 피부 고민에 귀를 기울여 만족할 만한 효과로<br> 대한민국의 화장품 시장을 선도해 왔습니다.</p>
+                            <p class="cate_com">천 만 고객의 니즈와 데이터를 기반으로<br>
+                            안전하고 고도화된 솔루션을 개발하고, 최적의 효과를 전달합니다.</p>
+                        </div>
+                    </div>
+                </figure>
+                <div class="page_wrap">
+                    <h2 class="page_tit none_tit">Brand Story</h2>
+                    <ul class="lst1">
+                        <li>
+                            <div class="tit_fr">
+                                <img src="./img/img_research1.png" alt="연구소 이미지1" class="img">
+                                <div class="tit_box right_item">
+                                    <div class="cate_head_fr">
+                                        <h3 class="cate_tit2">ORIGIN</h3>
+                                        <h2 class="cate_tit1"><span class="bold_tit">원료로</span> 말하다</h2>
+                                    </div>
+                                    <p class="cate_com">불필요함을 덜어낸 효능 중심 원료로<br>
+                                    본질과 기능에 집중하고, 피부에 닿는 마지막 순간까지<br>
+                                    탁월한 효능을 전달하는 최적의 원료를 제공합니다.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit_fr">
+                                <img src="./img/img_research2.png" alt="" class="img2">
+                                <div class="tit_box left_item">
+                                    <div class="cate_head_fr">
+                                        <h3 class="cate_tit2">TECH</h3>
+                                        <h2 class="cate_tit1"><span class="bold_tit">흡수로</span> 말하다</h2>
+                                    </div>
+                                    <p class="cate_com">엄선된 원료의 효능을 고스란히 전달하는<br>
+                                    고도화된 맞춤 흡수 기술을 적용하여<br>
+                                    피부에 안전하게 효과를 구현합니다.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit_fr">
+                                <img src="./img/img_research3.png" alt="" class="img">
+                                <div class="tit_box right_item">
+                                    <div class="cate_head_fr">
+                                        <h3 class="cate_tit2">LAB</h3>
+                                        <h2 class="cate_tit1"><span class="bold_tit">연구로</span> 말하다</h2>
+                                    </div>
+                                    <p class="cate_com">천 만 고객의 니즈와 데이터를 기반으로<br>
+                                    급변하는 환경 속 다양한 피부 고민에 심도 있게 접근합니다.<br>
+                                    엄선된 원료와 맞춤 흡수 기술을 적용한 제품의<br>
+                                    효과와 안정성을 철저히 검증하였습니다.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="page" id="page1">
+                <figure class="sub_img">
+                    <img src="./img/kv_bg.png" class="pic" alt="미샤 브랜드 이미지">
+                    <div class="w1440_fr">
+                        <div class="cate_tit_box">
+                            <h2 class="cate_tit1 bold_tit">TECHNOLOGY</h2>
+                            <h3 class="cate_tit2"></h3>
+                            <p class="cate_com">미샤는 고객의 피부에 닿는 순간,<br>
+                            그 효과를 온전하게 전달하고자 합니다.</p>
+                            <p class="cate_com">불필요함을 덜어낸 효능 중심의 원료와<br>
+                            독자적인 흡수 기술을 적용해<br>
+                            피부에 탁월한 효능을 효과적으로 전달합니다.</p>
+                        </div>
+                    </div>
+                </figure>
+                <div class="page_wrap">
+                    <h2 class="page_tit none_tit">MISSHA Technology</h2>
+                    <ul class="lst2">
+                        <li class="col4">
+                            <div class="circle_box">
+                                <h3 class="circle_tit">Focus<br>
+                                On Effects</h3>
+                                <p class="circle_com">안전하고 고도화된 솔루션으로<br>
+                                최적의 효과를<br>
+                                전달합니다.</p>
+                            </div>
+                        </li>
+                        <li class="col4">
+                            <div class="circle_box">
+                                <h3 class="circle_tit">Exclusive<br>
+                                Origin</h3>
+                                <p class="circle_com">핵심 효능 중심 원료로<br>
+                                본질과 기능에<br>
+                                집중합니다.</p>
+                            </div>
+                        </li>
+                        <li class="col4">
+                            <div class="circle_box">
+                                <h3 class="circle_tit">Patented<br>
+                                Technology</h3>
+                                <p class="circle_com">맞춤 특허 흡수 기술로<br>
+                                피부에 안전하게<br>
+                                효과를 구현합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="pic_box">
+                        <h2 class="cate_tit1 bold_tit center_tit">타임 레볼루션</h2>
+                        <img src="./img/time_kv.png" alt="미샤 타임 레볼루션" class="pic2">
+                    </div>
+                </div>
+            </section>
+            <section class="page" id="page2">
+                <div class="page_wrap">
+                    <h2 class="page_tit">MISSHA Film</h2>
+                    <ul class="lst2">
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="page" id="page3">
+                <div class="page_wrap">
+                    <h2 class="page_tit">X MISSHA</h2>
+                    <ul class="lst2">
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                        <li class="col4"><img src="http://placehold.it/400x300" alt="" class="pic"></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap">
+                <ul class="ft_box">
+                    <li class="col1">
+                        <img src="./img/footer_logo.png" alt="하단로고">
+                    </li>
+                    <li class="col2">
+                        <p class="linkbar">
+                            <a href="member.html">PARTNER ZONE</a>
+                            <a href="member.html#page1">이용약관</a>
+                            <a href="member.html#page2">개인정보처리방침</a>
+                        </p>
+                        <p class="addr">
+                            (주)에이블씨엔씨<br>
+                            서울특별시 서초구 서초대로38길 12(서초동, 마제스티시티 타워1 13층)<br>
+                            E-Mail : cs@mynunc.com
+                        </p>
+                        <p class="copyright">COPYRIGHT © ABLEC&amp;C. ALL RIGHT RESERVED.</p>
+                    </li>
+                    <li class="col3">
+                        <p class="sns_link">
+                            <a href="" class="utb_ico"></a>
+                            <a href="" class="insta_ico"></a>
+                            <a href="" class="face_ico"></a>
+                        </p>
+                        <select name="" id="sel">
+                            <option value="">Family Site</option>
+                            <option value="https://www.mynunc.com/main">NUNC</option>
+                            <option value="https://www.apieu.com/kr/index">A'piue</option>
+                            <option value="http://ablecnc.com/">ABLE C&amp;C</option>
+                        </select>
+                        <script>
+                        $(document).ready(function(){
+                            $("#sel").change(function(){
+                                var url = $(this).val();
+                                location.href = url;
+                            });
+                        });    
+                        </script>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div id="totop">
+        <a href="#">↑</a>
+    </div>
+</body>
+</html>

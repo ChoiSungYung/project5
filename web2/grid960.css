@@ -1,0 +1,12 @@
+@charset "utf-8";
+.lst1 { width: 1440px; clear:both; margin: 0 auto; }
+.lst1 li { float:left; margin-right: 2%; }
+.lst1 .col2:nth-child(6n) { margin-right: 0; }
+.lst1 .col1 { width: 6.5%; }
+.lst1 .col2 { width: 15%; }
+.lst1 .col3 { width: 23.5%; }
+.lst1 .col4 { width: 32%; }
+.lst1 .col5 { width: 40.5%; }
+.lst1 .col6 { width: 49%; }
+.lst1 li a { display:block; }
+.lst1 li a .pic { display:block; width: 100%; height: auto; }

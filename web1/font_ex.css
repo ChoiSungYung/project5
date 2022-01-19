@@ -1,0 +1,21 @@
+@charset "utf-8";   /* web1/font.css */
+@font-face {
+    font-family: 'bkings';
+    src: local("B Kings"), url('./fonts/BKings.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/BKings.woff') format('woff'),
+    url('./fonts/BKings.otf') format('opentype'),
+    url('./fonts/BKings.ttf') format('truetype'),
+    url('./fonts/BKings.svg#bkings') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 폰트가 현재의 fonts 폴더 안에 있는 경우 */
+@font-face { 
+    font-family: 'nbg';
+    src: local("나눔바른고딕OTF"), url('./fonts/NanumBarunGothic.eot?#iefix') format("embedded-opentype"), url('./fonts/NanumBarunGothic.woff') format("woff"), url('./fonts/NanumBarunGothic.ttf') format("truetype"), url('./fonts/NanumBarunGothic.otf') format("opentype")
+}
+/* 폰트가 상위의 fonts폴더에 있는 경우 */
+@font-face { 
+    font-family: 'ari';
+    src: local("아리따움"), url('../fonts/AritaBuriM.eot?#iefix') format("embedded-opentype"), url('../fonts/AritaBuriM.woff') format("woff"), url('../fonts/AritaBuriM.ttf') format("truetype"), url('../fonts/AritaBuriM.otf') format("opentype")
+}

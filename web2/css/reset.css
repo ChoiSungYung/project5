@@ -1,0 +1,10 @@
+@charset "utf-8";
+* { margin: 0; padding: 0; }
+body, html { width: 100%; clear:both; min-width:1440px; }
+ul { list-style: none; }
+a { text-decoration: none; }
+input, button { outline:0; border:0; }
+h1, h2, h3, h4, h5, h6 { padding-top: 2em; line-height: 2.4; }
+table { display:table; border-collapse: collapse; }
+table tr { display:table-row; }
+table th, table td { display:table-cell; }

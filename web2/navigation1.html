@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>내비게이션 설계 및 디자인</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .nav { clear:both; width: 100vw; height: 100vh; }    
+    .tit { text-align: center; padding-top: 100px; }    
+    </style>
+    <style>
+    #nav1 { background-color:#eee; }    
+    .gnb1 { clear:both; width: 800px; height: 50px; margin:0 auto; } 
+    .gnb1 li { float:left; width:25%;  background-color:deeppink; 
+        height: 50px;  } 
+    .gnb1 li a { display:block; color:#fff; text-align:center; line-height: 50px;  border-right:1px solid #fff;   transition:0.5s;    }
+    .gnb1 li a:hover { background-color: deepskyblue; }    
+    </style>
+    <style>
+    .gnb2 { clear:both; width: 800px; height: 50px; margin: 0 auto; 
+    position:relative; }
+    .gnb2 > ul > li { float:left; width: 25%; position:relative; } 
+    .gnb2 li a.dp1 { display:block; text-align: center; line-height: 50px; background-color: deeppink; color:#fff; font-size:20px; 
+        border-right:1px solid #fff; }
+    .gnb2 li:hover a.dp1 {  background-color: deepskyblue; }
+    .gnb2 .sub { width: 200px; height: 120px; display:none; 
+        position:absolute; top:50px; left: 0; z-index:90; }    
+    .gnb2 .sub li { clear:both; height: 40px; }
+    .gnb2 .sub li a { display:block; padding-left: 14px; line-height: 40px; background-color: #eee; color:#333; border-right:1px solid #fff; }
+    .gnb2 .sub li a:hover { background-color: #000; color:#fff; }
+    .gnb2 li:hover .sub { display:block; }   
+    .vs { width: 800px; margin: 0 auto; }    
+    </style>
+    <style>
+    .gnb3 { clear:both; width: 800px; height: 50px; margin: 0 auto; 
+    position:relative; }
+    .gnb3 > ul > li { float:left; width: 25%; position:relative; } 
+    .gnb3 li a.dp1 { display:block; text-align: center; line-height: 50px; background-color: deeppink; color:#fff; font-size:20px; 
+        border-right:1px solid #fff; }
+    .gnb3 li:hover a.dp1 {  background-color: deepskyblue; }
+    .gnb3 .sub { width: 200px; height: 120px; display:none; 
+        position:absolute; top:50px; left: 0; z-index:90; }    
+    .gnb3 .sub li { clear:both; height: 40px; }
+    .gnb3 .sub li a { display:block; padding-left: 14px; line-height: 40px; background-color: #eee; color:#333; border-right:1px solid #fff; }
+    .gnb3 .sub li a:hover { background-color: #000; color:#fff; }
+    .gnb3:hover .sub { display:block; } 
+    </style>
+    <style>
+    .gnb4 { clear:both; width: 800px; height: 50px; margin: 0 auto; 
+    position:relative; }
+    .gnb4 > ul > li { float:left; width: 25%; position:relative; } 
+    .gnb4 li a.dp1 { display:block; text-align: center; line-height: 50px; background-color: deeppink; color:#fff; font-size:20px; 
+        border-right:1px solid #fff; }
+    .gnb4 li:hover a.dp1 {  background-color: deepskyblue; }
+    .gnb4 .sub { width: 200px; height: 120px; display:none; 
+        position:absolute; top:50px; left: 0; z-index:90; }    
+    .gnb4 .sub li { clear:both; height: 40px; }
+    .gnb4 .sub li a { display:block; padding-left: 14px; line-height: 40px; background-color: #eee; color:#333; border-right:1px solid #fff; }
+    .gnb4 .sub li a:hover { background-color: #000; color:#fff; }
+    .gnb4:hover .sub { display:block; } 
+    .gnb4:before { content:""; display:block; width:calc(calc(100vw - 800px) / 2); height: 120px; background-color:#eee; position:absolute; top: 50px; right:50%; margin-right:400px;
+        display:none; } 
+    .gnb4:hover::before { display:block; } 
+    .gnb4:after { content:""; display:block; width:calc(calc(100vw - 800px) / 2); height: 120px; background-color:#eee; position:absolute; top: 50px; left:50%; margin-left:400px;
+        display:none; } 
+    .gnb4:hover::after { display:block; }
+    </style>
+</head>
+<body>
+    <div class="nav" id="nav1">
+        <h2 class="tit">1단 메뉴</h2>
+        <nav class="gnb1">
+            <ul>
+                <li><a href="">메뉴1</a></li>
+                <li><a href="">메뉴2</a></li>
+                <li><a href="">메뉴3</a></li>
+                <li><a href="">메뉴4</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav" id="nav2">
+        <h2 class="tit">2단 메뉴 - 각 각 서브메뉴 열기</h2>
+        <nav class="gnb2">
+            <ul> 
+                <li>
+                    <a href="" class="dp1">메인메뉴1</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴1-1-1</a></li>
+                            <li><a href="">서브메뉴1-2-1</a></li>
+                            <li><a href="">서브메뉴1-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴2</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴2-1-1</a></li>
+                            <li><a href="">서브메뉴2-2-1</a></li>
+                            <li><a href="">서브메뉴2-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴3</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴3-1-1</a></li>
+                            <li><a href="">서브메뉴3-2-1</a></li>
+                            <li><a href="">서브메뉴3-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴4</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴4-1-1</a></li>
+                            <li><a href="">서브메뉴4-2-1</a></li>
+                            <li><a href="">서브메뉴4-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <figure class="vs">
+            <img src="http://placehold.it/800x400/333" alt="">
+        </figure>
+    </div>
+    <div class="nav" id="nav3">
+        <h2 class="tit">2단 메뉴 - 한꺼번에 서브메뉴 열기</h2>
+        <nav class="gnb3">
+            <ul>    
+                <li> 
+                    <a href="" class="dp1">메인메뉴1</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴1-1-1</a></li>
+                            <li><a href="">서브메뉴1-2-1</a></li>
+                            <li><a href="">서브메뉴1-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴2</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴2-1-1</a></li>
+                            <li><a href="">서브메뉴2-2-1</a></li>
+                            <li><a href="">서브메뉴2-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴3</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴3-1-1</a></li>
+                            <li><a href="">서브메뉴3-2-1</a></li>
+                            <li><a href="">서브메뉴3-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴4</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴4-1-1</a></li>
+                            <li><a href="">서브메뉴4-2-1</a></li>
+                            <li><a href="">서브메뉴4-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <figure class="vs">
+            <img src="http://placehold.it/800x400/333" alt="">
+        </figure>
+    </div>
+    <div class="nav" id="nav4">
+        <h2 class="tit">2단 메뉴 - 한꺼번에 서브메뉴 열고 양 날개가 있는 경우</h2>
+        <nav class="gnb4">
+            <ul>
+                <li>
+                    <a href="" class="dp1">메인메뉴1</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴1-1-1</a></li>
+                            <li><a href="">서브메뉴1-2-1</a></li>
+                            <li><a href="">서브메뉴1-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴2</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴2-1-1</a></li>
+                            <li><a href="">서브메뉴2-2-1</a></li>
+                            <li><a href="">서브메뉴2-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴3</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴3-1-1</a></li>
+                            <li><a href="">서브메뉴3-2-1</a></li>
+                            <li><a href="">서브메뉴3-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="dp1">메인메뉴4</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="">서브메뉴4-1-1</a></li>
+                            <li><a href="">서브메뉴4-2-1</a></li>
+                            <li><a href="">서브메뉴4-3-1</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <figure class="vs">
+            <img src="http://placehold.it/800x400/333" alt="">
+        </figure>
+    </div>
+</body>
+</html>

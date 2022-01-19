@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* NotoSans */
+@font-face {
+      font-family:'NotoSansL';
+      font-style:normal;
+      src: url('../fonts/NotoSans-Light.ttf') format('truetype');
+      src: url('../fonts/NotoSans-Light.otf') format('opentype'),
+           url('../fonts/NotoSans-Light.woff') format('woff');
+}
+
+@font-face {
+      font-family:'NotoSansR';
+      font-style:normal;
+      src: url('../fonts/NotoSans-Regular.ttf') format('truetype');
+      src: url('../fonts/NotoSans-Regular.otf') format('opentype'),
+           url('../fonts/NotoSans-Regular.woff') format('woff');
+}
+
+@font-face {
+      font-family:'NotoSansM';
+      font-style:normal;
+      src: url('../fonts/NotoSans-Medium.ttf') format('truetype');
+      src: url('../fonts/NotoSans-Medium.otf') format('opentype'),
+           url('../fonts/NotoSans-Medium.woff') format('woff');
+}
+
+@font-face {
+      font-family:'NotoSansB';
+      font-style:normal;
+      src: url('../fonts/NotoSans-Bold.ttf') format('truetype');
+      src: url('../fonts/NotoSans-Bold.otf') format('opentype'),
+           url('../fonts/NotoSans-Bold.woff') format('woff');
+}
+
+/* Roboto */
+@font-face {
+      font-family:'RobotoL';
+      font-style:normal;
+      src: url('../fonts/Roboto-Light.ttf') format('truetype');
+      src: url('../fonts/Roboto-Light.otf') format('opentype'),
+           url('../fonts/Roboto-Light.woff') format('woff');
+}
+
+@font-face {
+      font-family:'RobotoR';
+      font-style:normal;
+      src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+      src: url('../fonts/Roboto-Regular.otf') format('opentype'),
+           url('../fonts/Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+      font-family:'RobotoM';
+      font-style:normal;
+      src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+      src: url('../fonts/Roboto-Medium.otf') format('opentype'),
+           url('../fonts/Roboto-Medium.woff') format('woff');
+}
+
+@font-face {
+      font-family:'RobotoB';
+      font-style:normal;
+      src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+      src: url('../fonts/Roboto-Bold.otf') format('opentype'),
+           url('../fonts/Roboto-Bold.woff') format('woff');
+}

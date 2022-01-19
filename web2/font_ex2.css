@@ -1,0 +1,5 @@
+@charset "utf-8";
+@font-face {
+    font-family:"mono";
+    src:local(※), url("../fonts/mono.woff") format(woff), url("../fonts/mono.otf") format(opentype), url("../fonts/mono.ttf") format(truetype);
+}
